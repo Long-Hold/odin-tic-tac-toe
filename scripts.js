@@ -52,7 +52,7 @@ const gameBoard = (function (){
     }
 
     // Checks the winning patterns and returns the winner of the game
-    const getWinner = () => {
+    const winner = () => {
         /**Checks all possible winning patterns
          * If a winner is found in a pattern, immediately return the symbol
          * of the winning player
@@ -97,5 +97,32 @@ const gameBoard = (function (){
 
         return null;
     }
-    return {player, placeTile, getWinner};
+
+    // Checks if board is in a terminal state, returns boolean
+    const isTerminal = () => {
+        /**Checks if the board is in a terminal state.
+         * 
+         * First check for a winner,
+         * if no winner then check for any empty cells
+         * 
+         * If an empty cell is found, return false (game can continue)
+         * 
+         * Otherwise, return true (no winner found, but all cells are filled)
+         */
+        if (winner() !== null) {
+            return true;
+        }
+
+        // Check for ANY empty tiles
+        for (const row of board) {
+            for (const cell of row) {
+                if (cell === EMPTY) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+    return {player, placeTile, isTerminal};
 })();
