@@ -108,6 +108,25 @@ const gameBoard = (function (){
         return board;
     }
 
+    // Method to return array storing coordiantes of empty cells
+    const getEmptyCells = () => {
+        /**Returns an array storing all empty cell locations
+         * This method is utilized by an AI agent to help pick a placement
+         */
+        let emptySpaces = [];
+        for (const row of board) {
+            const rowIndex = board.indexOf(row);
+
+            row.forEach((cell,colIndex) => {
+                if (cell === EMPTY) {
+                    emptySpaces.push([rowIndex, colIndex]);
+                }
+            })
+        }
+
+        return emptySpaces;
+    }
+
     // Checks if board is in a terminal state, returns boolean
     const isTerminal = () => {
         /**Checks if the board is in a terminal state.
@@ -153,5 +172,5 @@ const gameBoard = (function (){
                 return 0;
         }
     }
-    return {player, placeTile, isTerminal, getWinner};
+    return {player, placeTile, getEmptyCells, isTerminal, getWinner};
 })();
