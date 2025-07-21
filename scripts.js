@@ -36,7 +36,11 @@ const gameBoard = (function (){
         return (emptySpaces % 2 === 1 ? X : Y);
     }
 
+    // Places the symbol of the current player at the passed array index
     const placeTile = (row, col) => {
+        /**If the tile is EMPTY, place the symbol of the current player
+         * at the received coordinates
+         */
         if (board[row][col] !== EMPTY) {
             console.error(`Tile: ${row}, ${col} is occupied.`);
         }
