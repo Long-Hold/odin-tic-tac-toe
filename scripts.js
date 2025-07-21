@@ -37,10 +37,19 @@ const gameBoard = (function (){
     }
 
     // Places the symbol of the current player at the passed array index
-    const placeTile = (row, col) => {
+    const placeTile = (action) => {
         /**If the tile is EMPTY, place the symbol of the current player
          * at the received coordinates
          */
+
+        const [row, col] = action;
+        if (row < 0 || col < 0) {
+            throw new RangeError('Negative out-of-bounds placement');
+        }
+        if (row > board.length || col > board[0].length) {
+            throw new RangeError('Positive out-of-bounds placement');
+        }
+
         if (board[row][col] !== EMPTY) {
             console.error(`Tile: ${row}, ${col} is occupied.`);
         }
