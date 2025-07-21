@@ -9,7 +9,7 @@ const gameBoard = (function (){
     const Y = 'Y';
 
     // Initialize the gameboard with empty tiles
-    const gameboard = [
+    const board = [
         [EMPTY,EMPTY,EMPTY],
         [EMPTY,EMPTY,EMPTY],
         [EMPTY,EMPTY,EMPTY]
@@ -25,7 +25,7 @@ const gameBoard = (function (){
          */
         let emptySpaces = 0;
 
-        for (const row of gameBoard) {
+        for (const row of board) {
             for (const ele of row) {
                 if (ele === EMPTY) {
                     emptySpaces += 1;
@@ -35,4 +35,17 @@ const gameBoard = (function (){
 
         return (emptySpaces % 2 === 1 ? X : Y);
     }
+
+    const placeTile = (row, col) => {
+        if (board[row][col] !== EMPTY) {
+            console.error(`Tile: ${row}, ${col} is occupied.`);
+        }
+        else {
+            board[row][col] = player();
+        }
+
+        return board;
+    }
+
+    return {player, placeTile};
 })();
