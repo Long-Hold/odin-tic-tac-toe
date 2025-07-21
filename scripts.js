@@ -6,7 +6,7 @@ const gameBoard = (function (){
     //Create 2D array representing game board
     const EMPTY = null;
     const X = 'X';
-    const Y = 'Y';
+    const O = 'O';
 
     // Initialize the gameboard with empty tiles
     const board = [
@@ -136,8 +136,8 @@ const gameBoard = (function (){
             case X:
                 console.log(`Player: ${X} Wins`);
                 return 1;
-            case Y:
-                console.log(`Player: ${Y} wins`);
+            case O:
+                console.log(`Player: ${O} wins`);
                 return -1;
             default:
                 console.log('No winner detected');
