@@ -78,6 +78,19 @@ const gameBoard = (function (){
                     return board[0][col];
                 }
             }
+        
+        // Checks for cross winning pattern
+        /**If the center of the board is filled, check the corners for a match
+         * return the symbol of the center if symbols match
+         */
+        if (board[1][1] !== EMPTY) {
+            if ((board[0][0] === board[1][1] && board[1][1] === board[2][2]) ||
+                (board[0][2] === board[1][1] && board[1][1] === board[2][0])) {
+                    return board[1][1];
+            }
+        }
+
+        return null;
     }
     return {player, placeTile, getWinner};
 })();
