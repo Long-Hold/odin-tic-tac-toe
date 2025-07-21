@@ -53,20 +53,25 @@ const gameBoard = (function (){
 
     // Checks the winning patterns and returns the winner of the game
     const getWinner = () => {
-        // Check horizontal row patterns
+        /**Checks all possible winning patterns
+         * If a winner is found in a pattern, immediately return the symbol
+         * of the winning player
+         * 
+         * If no winning player is found, return null
+         */
 
+        // Check horizontal row patterns
         /**If the first cell is not empty, then compare
          * each cell in that row with the first cell
          * if all values are the same, return that symbol as the winner.
          */
-
-
         const winningRow = board.find(row => 
             row[0] !== EMPTY && 
             row.every(cell => cell === row[0])
         );
         if (winningRow) return winningRow[0];
 
+        //Check for vertical column patterns
         /** Checks each row in a given column for the same symbol
          * Returns the symbol in the first row in a column if all symbols in a column
          * are the same
