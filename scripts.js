@@ -51,5 +51,33 @@ const gameBoard = (function (){
         return board;
     }
 
-    return {player, placeTile};
+    // Checks the winning patterns and returns the winner of the game
+    const getWinner = () => {
+        // Check horizontal row patterns
+
+        /**If the first cell is not empty, then compare
+         * each cell in that row with the first cell
+         * if all values are the same, return that symbol as the winner.
+         */
+
+
+        const winningRow = board.find(row => 
+            row[0] !== EMPTY && 
+            row.every(cell => cell === row[0])
+        );
+        if (winningRow) return winningRow[0];
+
+        /** Checks each row in a given column for the same symbol
+         * Returns the symbol in the first row in a column if all symbols in a column
+         * are the same
+         */
+        const numCols = board[0].length;
+        for (let col = 0; col < numCols; ++col) {
+                const [firstRow, secondRow, thirdRow] = [board[0][col], board[1][col], board[2][col]];
+                if (firstRow !== EMPTY && firstRow === secondRow && secondRow === thirdRow) {
+                    return board[0][col];
+                }
+            }
+    }
+    return {player, placeTile, getWinner};
 })();
