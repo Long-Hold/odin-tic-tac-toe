@@ -15,51 +15,6 @@ const gameBoard = (function (){
         [EMPTY,EMPTY,EMPTY]
     ];
 
-    // Determine which player's turn it is
-    const player = () => {
-        /**Iterates through the gameBoard array and ccounts the number
-         * of empty spaces.
-         * 
-         * If there is an odd number of empty spaces, then it is
-         * player X's turn else it is player Y's turn
-         */
-        let emptySpaces = 0;
-
-        for (const row of board) {
-            for (const ele of row) {
-                if (ele === EMPTY) {
-                    emptySpaces += 1;
-                }
-            }
-        }
-
-        return (emptySpaces % 2 === 1 ? X : Y);
-    }
-
-    // Places the symbol of the current player at the passed array index
-    const placeTile = (action) => {
-        /**If the tile is EMPTY, place the symbol of the current player
-         * at the received coordinates
-         */
-
-        const [row, col] = action;
-        if (row < 0 || col < 0) {
-            throw new RangeError('Negative out-of-bounds placement');
-        }
-        if (row > board.length || col > board[0].length) {
-            throw new RangeError('Positive out-of-bounds placement');
-        }
-
-        if (board[row][col] !== EMPTY) {
-            console.error(`Tile: ${row}, ${col} is occupied.`);
-        }
-        else {
-            board[row][col] = player();
-        }
-
-        return board;
-    }
-
     // Checks the winning patterns and returns the winner of the game
     // ---- PRIVATE METHOD ----
     const winner = () => {
@@ -106,6 +61,51 @@ const gameBoard = (function (){
         }
 
         return null;
+    }
+
+    // Determine which player's turn it is
+    const player = () => {
+        /**Iterates through the gameBoard array and ccounts the number
+         * of empty spaces.
+         * 
+         * If there is an odd number of empty spaces, then it is
+         * player X's turn else it is player Y's turn
+         */
+        let emptySpaces = 0;
+
+        for (const row of board) {
+            for (const ele of row) {
+                if (ele === EMPTY) {
+                    emptySpaces += 1;
+                }
+            }
+        }
+
+        return (emptySpaces % 2 === 1 ? X : Y);
+    }
+
+    // Places the symbol of the current player at the passed array index
+    const placeTile = (action) => {
+        /**If the tile is EMPTY, place the symbol of the current player
+         * at the received coordinates
+         */
+
+        const [row, col] = action;
+        if (row < 0 || col < 0) {
+            throw new RangeError('Negative out-of-bounds placement');
+        }
+        if (row > board.length || col > board[0].length) {
+            throw new RangeError('Positive out-of-bounds placement');
+        }
+
+        if (board[row][col] !== EMPTY) {
+            console.error(`Tile: ${row}, ${col} is occupied.`);
+        }
+        else {
+            board[row][col] = player();
+        }
+
+        return board;
     }
 
     // Checks if board is in a terminal state, returns boolean
