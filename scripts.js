@@ -52,6 +52,7 @@ const gameBoard = (function (){
     }
 
     // Checks the winning patterns and returns the winner of the game
+    // ---- PRIVATE METHOD ----
     const winner = () => {
         /**Checks all possible winning patterns
          * If a winner is found in a pattern, immediately return the symbol
@@ -124,5 +125,24 @@ const gameBoard = (function (){
 
         return true;
     }
-    return {player, placeTile, isTerminal};
+
+    // Returns an integer representation of the winning player
+    const getWinner = () => {
+        /**Returns a numeric representation of the winning player
+         * this is particularly helpful for the BOT AI player,
+         * and makes win condition checking easier and more efficient
+         */
+        switch(winner()) {
+            case X:
+                console.log(`Player: ${X} Wins`);
+                return 1;
+            case Y:
+                console.log(`Player: ${Y} wins`);
+                return -1;
+            default:
+                console.log('No winner detected');
+                return 0;
+        }
+    }
+    return {player, placeTile, isTerminal, getWinner};
 })();
