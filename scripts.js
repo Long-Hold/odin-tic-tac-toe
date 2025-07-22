@@ -130,8 +130,8 @@ const gameBoard = (function (){
         if (Array.isArray(action) === false) {
             throw new TypeError('Passed parameter must be of Type: Array');
         }
-        
         const [row, col] = action;
+        
         if (row < 0 || col < 0) {
             throw new RangeError('Negative out-of-bounds placement');
         }
