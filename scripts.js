@@ -213,8 +213,15 @@ const gameBoard = (function (){
     return {isSymbolValid, player, placeTile, getEmptyCells, isTerminal, getWinner};
 })();
 
-function createPlayer(symbol) {
+function createPlayer(symbol, isAI = false) {
     if (gameBoard.isSymbolValid(symbol) === false) {
         console.error(`${symbol} is not a valid symbol.`)
     }
+
+    const playerSymbol = symbol;
+    const status = isAI;
+
+    const makeMove = (position) => gameBoard.placeTile(position);
+
+    return {playerSymbol, status, makeMove};
 }
