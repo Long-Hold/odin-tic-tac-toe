@@ -200,7 +200,7 @@ const gameBoard = (function (){
                 return 0;
         }
     }
-    return {player, getAvailablePlayer, placeTile, getEmptyCells, isTerminal, getWinner};
+    return {getAvailablePlayer, player, placeTile, getEmptyCells, isTerminal, getWinner};
 })();
 
 function createPlayer() {
