@@ -119,7 +119,7 @@ const gameBoard = (function (){
             }
         }
 
-        return (emptySpaces % 2 === 1 ? X : Y);
+        return (emptySpaces % 2 === 1 ? X : O);
     }
 
     // Places the symbol of the current player at the passed array index
