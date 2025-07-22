@@ -8,6 +8,11 @@ const gameBoard = (function (){
     const X = 'X';
     const O = 'O';
 
+    // Converts the symbol variable to a char representation
+    const symbolToCharMap = {X, O, EMPTY};
+
+    const activePlayers = {X: false, O: false};
+
     // Initialize the gameboard with empty tiles
     const board = [
         [EMPTY,EMPTY,EMPTY],
@@ -57,6 +62,19 @@ const gameBoard = (function (){
             if ((board[0][0] === board[1][1] && board[1][1] === board[2][2]) ||
                 (board[0][2] === board[1][1] && board[1][1] === board[2][0])) {
                     return board[1][1];
+            }
+        }
+
+        return null;
+    }
+
+    const getAvailablePlayer = () => {
+        /**If an available player is found, return it's char representation
+         * otherwise return null (no available players)
+        */
+        for (const obj in activePlayers) {
+            if (activePlayers[obj] === false) {
+                return symbolToCharMap[obj];
             }
         }
 
@@ -172,5 +190,9 @@ const gameBoard = (function (){
                 return 0;
         }
     }
-    return {player, placeTile, getEmptyCells, isTerminal, getWinner};
+    return {player, getAvailablePlayer, placeTile, getEmptyCells, isTerminal, getWinner};
 })();
+
+function createPlayer() {
+
+}
