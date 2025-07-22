@@ -231,7 +231,8 @@ function createPlayer(symbol, isAI = false) {
      * isAI helps automatic move making decisions between the gameBoard and UI
      */
     if (gameBoard.isSymbolValid(symbol) === false) {
-        console.error(`${symbol} is not a valid symbol.`)
+        console.error(`${symbol} is not a valid symbol.`);
+        return null;
     }
 
     const playerSymbol = symbol.toUpperCase();
@@ -253,3 +254,31 @@ function createPlayer(symbol, isAI = false) {
 
     return {playerSymbol, status, makeMove};
 }
+
+
+const gameFlow = (function() {
+    /**Controls the game flow logic.
+     * 
+     * Game flow logic:
+     * 1. Place tile
+     * 2. Check board terminal state:
+     *      If terminal, return winner or draw state
+     *      If not terminal, await next tile placement
+     */
+
+    const playGame = (playerX, playerO) => {
+        // Checks if the board is in a playable state
+        // Meaning there is no win condition yet or there are still empty spaces
+        while (gameBoard.isTerminal() === false) {
+            let position = window.prompt('Coords: ');
+            let coords = position.split(',').map(Number);
+            gameBoard.player() === playerX.playerSymbol ? playerX.makeMove(coords) : playerO.makeMove(coords);
+            console.log(gameBoard.getBoard());
+        }
+    }
+
+    return {playGame};
+})();
+
+const playerX = createPlayer('X');
+const playerO = createPlayer('O');
