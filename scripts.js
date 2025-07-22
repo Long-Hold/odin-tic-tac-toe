@@ -1,6 +1,8 @@
 /**Creates a signle instance of the gameBoard
  * gameBoard records, validates, updates, and displays the 
  * internal display of the UI game.
+ * 
+ * Tracks and assigns available player slots automatically
  */
 const gameBoard = (function (){
     //Create 2D array representing game board
