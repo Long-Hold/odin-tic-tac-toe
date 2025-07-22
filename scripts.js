@@ -255,7 +255,6 @@ function createPlayer(symbol, isAI = false) {
     return {playerSymbol, status, makeMove};
 }
 
-
 const gameFlow = (function() {
     /**Controls the game flow logic.
      * 
