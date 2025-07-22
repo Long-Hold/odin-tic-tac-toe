@@ -98,7 +98,7 @@ const gameBoard = (function (){
 
     // Returns an array with valid symbols
     const isSymbolValid = (symbol) => {
-        return validSymbols.includes(symbol);
+        return validSymbols.includes(symbol.toUpperCase());
     }
 
     // Determine which player's turn it is
@@ -131,7 +131,7 @@ const gameBoard = (function (){
             throw new TypeError('Passed parameter must be of Type: Array');
         }
         const [row, col] = action;
-        
+
         if (row < 0 || col < 0) {
             throw new RangeError('Negative out-of-bounds placement');
         }
@@ -221,10 +221,12 @@ function createPlayer(symbol, isAI = false) {
         console.error(`${symbol} is not a valid symbol.`)
     }
 
-    const playerSymbol = symbol;
+    const playerSymbol = symbol.toUpperCase();
     const status = isAI;
 
-    const makeMove = (position) => gameBoard.placeTile(position);
+    const makeMove = (position) => {
+        try {gameBoard.placeTile(position)} catch (e) {console.error(e)};
+    }
 
     return {playerSymbol, status, makeMove};
 }
