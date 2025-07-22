@@ -213,7 +213,7 @@ const gameBoard = (function (){
                 return 0;
         }
     }
-    return {board, isSymbolValid, player, placeTile, getEmptyCells, isTerminal, getWinner};
+    return {isSymbolValid, player, placeTile, getEmptyCells, isTerminal, getWinner};
 })();
 
 function createPlayer(symbol, isAI = false) {
@@ -227,7 +227,7 @@ function createPlayer(symbol, isAI = false) {
     const makeMove = (position) => {
         if (gameBoard.player() !== playerSymbol) {
             console.error(`Player: ${playerSymbol} cannot make a move right now.`)
-            return gameBoard.board;
+            return null;
         }
 
         try {
