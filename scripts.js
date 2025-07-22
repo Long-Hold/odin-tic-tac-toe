@@ -221,6 +221,15 @@ const gameBoard = (function (){
 })();
 
 function createPlayer(symbol, isAI = false) {
+    /**Function factory to create player objects that can interact with the board
+     * 
+     * Parameters:
+     *  symbol: char
+     *  isAI: boolean
+     * 
+     * symbol is verified by the gameBoard object.
+     * isAI helps automatic move making decisions between the gameBoard and UI
+     */
     if (gameBoard.isSymbolValid(symbol) === false) {
         console.error(`${symbol} is not a valid symbol.`)
     }
