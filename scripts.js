@@ -210,11 +210,11 @@ const gameBoard = (function (){
                 return 0;
         }
     }
-    return {getAvailablePlayer, getValidSymbols, player, placeTile, getEmptyCells, isTerminal, getWinner};
+    return {isSymbolValid, player, placeTile, getEmptyCells, isTerminal, getWinner};
 })();
 
 function createPlayer(symbol) {
-    if (!gameBoard.getValidSymbols().includes(symbol)) {
+    if (gameBoard.isSymbolValid(symbol) === false) {
         console.error(`${symbol} is not a valid symbol.`)
     }
 }
