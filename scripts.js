@@ -93,6 +93,11 @@ const gameBoard = (function (){
         return null;
     }
 
+    // Returns an array with valid symbols
+    const getValidSymbols = () => {
+        return [X,O];
+    }
+
     // Determine which player's turn it is
     const player = () => {
         /**Iterates through the gameBoard array and ccounts the number
@@ -202,9 +207,11 @@ const gameBoard = (function (){
                 return 0;
         }
     }
-    return {getAvailablePlayer, player, placeTile, getEmptyCells, isTerminal, getWinner};
+    return {getAvailablePlayer, getValidSymbols, player, placeTile, getEmptyCells, isTerminal, getWinner};
 })();
 
-function createPlayer() {
-
+function createPlayer(symbol) {
+    if (!gameBoard.getValidSymbols().includes(symbol)) {
+        console.error(`${symbol} is not a valid symbol.`)
+    }
 }
