@@ -13,6 +13,9 @@ const gameBoard = (function (){
     // Converts the symbol variable to a char representation
     const symbolToCharMap = {X, O, EMPTY};
 
+    // An array containing valid symbols
+    const validSymbols = [X, O];
+
     // When false - player slot can be taken
     // When true - player cannot be assigned
     const activePlayers = {X: false, O: false};
@@ -94,8 +97,8 @@ const gameBoard = (function (){
     }
 
     // Returns an array with valid symbols
-    const getValidSymbols = () => {
-        return [X,O];
+    const isSymbolValid = (symbol) => {
+        return validSymbols.includes(symbol);
     }
 
     // Determine which player's turn it is
