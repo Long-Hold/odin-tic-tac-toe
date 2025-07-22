@@ -204,13 +204,13 @@ const gameBoard = (function (){
         switch(winner()) {
             case X:
                 console.log(`Player: ${X} Wins`);
-                return 1;
+                return symbolToCharMap[X];
             case O:
                 console.log(`Player: ${O} wins`);
-                return -1;
+                return symbolToCharMap[O];
             default:
                 console.log('No winner detected');
-                return 0;
+                return null;
         }
     }
 
@@ -275,8 +275,10 @@ const gameFlow = (function() {
             gameBoard.player() === playerX.playerSymbol ? playerX.makeMove(coords) : playerO.makeMove(coords);
             console.log(gameBoard.getBoard());
         }
-    }
 
+        // If the while loop breaks, return the win condition
+        return gameBoard.getWinner();
+    }
     return {playGame};
 })();
 
