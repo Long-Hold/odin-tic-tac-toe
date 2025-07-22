@@ -213,7 +213,11 @@ const gameBoard = (function (){
                 return 0;
         }
     }
-    return {isSymbolValid, player, placeTile, getEmptyCells, isTerminal, getWinner};
+
+    // Returns a deep copy of the internal array game state
+    const getBoard = () => board.map(row => [...row]);
+
+    return {isSymbolValid, player, placeTile, getEmptyCells, isTerminal, getWinner, getBoard};
 })();
 
 function createPlayer(symbol, isAI = false) {
@@ -227,7 +231,7 @@ function createPlayer(symbol, isAI = false) {
     const makeMove = (position) => {
         if (gameBoard.player() !== playerSymbol) {
             console.error(`Player: ${playerSymbol} cannot make a move right now.`)
-            return null;
+            return gameBoard.getBoard();
         }
 
         try {
