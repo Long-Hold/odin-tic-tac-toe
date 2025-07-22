@@ -225,7 +225,7 @@ function createPlayer(symbol, isAI = false) {
     const status = isAI;
 
     const makeMove = (position) => {
-        try {gameBoard.placeTile(position)} catch (e) {console.error(e)};
+        try {return gameBoard.placeTile(position)} catch (e) {console.error(e)};
     }
 
     return {playerSymbol, status, makeMove};
