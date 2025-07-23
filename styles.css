@@ -16,18 +16,18 @@
 
 html {
     background-color: rgb(28, 28, 28);
+    height: 100%;
 }
 /* ---- End of reset/ normalizing */
 
 /* ---- Background SVG placement ---- */
 body {
-    background-image: url(./svgs/tic-tac-toe-gridbackground.svg);
+    background-image: url(./svgs/animated.svg);
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    width: 100vw;
-    min-height: 100vw;
-    z-index: -1;
+
+    min-height: 100vh;
 }
 /* ---- End of background styling ---- */
