@@ -39,10 +39,16 @@ body {
 
 .gamegrid {
     border: 1px solid red;
-    
+
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-
     padding: 0.6rem;
+}
+/* ---- End of positioning styling ---- */
+
+/* ---- gamegrid Visual styling ---- */
+.gamegrid div {
+    border: 2px solid white;
+    background-color: rgba(39, 38, 39, 0.5);
 }
