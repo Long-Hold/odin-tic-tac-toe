@@ -1,0 +1,131 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradients -->
+    <radialGradient id="redGlow" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#ff0000;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#ff0000;stop-opacity:0" />
+    </radialGradient>
+    
+    <radialGradient id="yellowGlow" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#ffcc00;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#ffcc00;stop-opacity:0" />
+    </radialGradient>
+    
+    <linearGradient id="diagStripe" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#2a2a2a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a1a;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Patterns -->
+    <pattern id="hexGrid" x="0" y="0" width="100" height="86.6" patternUnits="userSpaceOnUse">
+      <polygon points="50,0 100,28.85 100,86.6 50,86.6 0,57.75 0,28.85" 
+               fill="none" 
+               stroke="#2a2a2a" 
+               stroke-width="0.5" 
+               opacity="0.3"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="#0d0d0d"/>
+  
+  <!-- Diagonal stripes background -->
+  <g opacity="0.05">
+    <rect x="-100" y="0" width="300" height="1500" fill="url(#diagStripe)" transform="rotate(45 0 0)"/>
+    <rect x="300" y="0" width="300" height="1500" fill="url(#diagStripe)" transform="rotate(45 0 0)"/>
+    <rect x="700" y="0" width="300" height="1500" fill="url(#diagStripe)" transform="rotate(45 0 0)"/>
+    <rect x="1100" y="0" width="300" height="1500" fill="url(#diagStripe)" transform="rotate(45 0 0)"/>
+    <rect x="1500" y="0" width="300" height="1500" fill="url(#diagStripe)" transform="rotate(45 0 0)"/>
+  </g>
+  
+  <!-- Hexagonal grid overlay -->
+  <rect width="1920" height="1080" fill="url(#hexGrid)" opacity="0.5"/>
+  
+  <!-- Tech circles with connections -->
+  <g opacity="0.15">
+    <!-- Connection lines -->
+    <line x1="300" y1="200" x2="600" y2="350" stroke="#444444" stroke-width="1"/>
+    <line x1="600" y1="350" x2="450" y2="600" stroke="#444444" stroke-width="1"/>
+    <line x1="450" y1="600" x2="800" y2="700" stroke="#444444" stroke-width="1"/>
+    
+    <!-- Node circles -->
+    <circle cx="300" cy="200" r="40" fill="none" stroke="#666666" stroke-width="2"/>
+    <circle cx="300" cy="200" r="3" fill="#ff0000"/>
+    
+    <circle cx="600" cy="350" r="30" fill="none" stroke="#666666" stroke-width="2"/>
+    <circle cx="600" cy="350" r="3" fill="#666666"/>
+    
+    <circle cx="450" cy="600" r="35" fill="none" stroke="#666666" stroke-width="2"/>
+    <circle cx="450" cy="600" r="3" fill="#ffcc00"/>
+    
+    <circle cx="800" cy="700" r="25" fill="none" stroke="#666666" stroke-width="2"/>
+    <circle cx="800" cy="700" r="3" fill="#666666"/>
+  </g>
+  
+  <!-- Right side tech elements -->
+  <g opacity="0.1">
+    <line x1="1400" y1="400" x2="1700" y2="400" stroke="#444444" stroke-width="1"/>
+    <line x1="1550" y1="250" x2="1550" y2="550" stroke="#444444" stroke-width="1"/>
+    
+    <circle cx="1550" cy="400" r="60" fill="none" stroke="#666666" stroke-width="1" stroke-dasharray="5,5"/>
+    <circle cx="1550" cy="400" r="80" fill="none" stroke="#444444" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Data flow visualization -->
+  <g opacity="0.2">
+    <rect x="100" y="800" width="60" height="4" fill="#666666"/>
+    <rect x="180" y="800" width="40" height="4" fill="#ff0000"/>
+    <rect x="240" y="800" width="80" height="4" fill="#666666"/>
+    <rect x="340" y="800" width="30" height="4" fill="#ffcc00"/>
+    <rect x="390" y="800" width="50" height="4" fill="#666666"/>
+    
+    <rect x="100" y="820" width="40" height="4" fill="#666666"/>
+    <rect x="160" y="820" width="60" height="4" fill="#666666"/>
+    <rect x="240" y="820" width="30" height="4" fill="#ff0000"/>
+    <rect x="290" y="820" width="70" height="4" fill="#666666"/>
+  </g>
+  
+  <!-- Abstract tech shapes -->
+  <g opacity="0.08">
+    <!-- Large background diamond -->
+    <path d="M 960 100 L 1200 540 L 960 980 L 720 540 Z" 
+          fill="none" 
+          stroke="#333333" 
+          stroke-width="2"/>
+    
+    <!-- Inner diamond -->
+    <path d="M 960 300 L 1100 540 L 960 780 L 820 540 Z" 
+          fill="none" 
+          stroke="#444444" 
+          stroke-width="1"/>
+  </g>
+  
+  <!-- Red glow accent -->
+  <ellipse cx="300" cy="200" rx="150" ry="150" fill="url(#redGlow)" opacity="0.3"/>
+  
+  <!-- Yellow glow accent -->
+  <ellipse cx="1550" cy="400" rx="200" ry="200" fill="url(#yellowGlow)" opacity="0.2"/>
+  
+  <!-- Corner brackets -->
+  <g stroke="#666666" stroke-width="2" fill="none" opacity="0.3">
+    <!-- Top left -->
+    <path d="M 50 50 L 50 100 M 50 50 L 100 50"/>
+    <!-- Top right -->
+    <path d="M 1870 50 L 1820 50 M 1870 50 L 1870 100"/>
+    <!-- Bottom left -->
+    <path d="M 50 1030 L 50 980 M 50 1030 L 100 1030"/>
+    <!-- Bottom right -->
+    <path d="M 1870 1030 L 1870 980 M 1870 1030 L 1820 1030"/>
+  </g>
+  
+  <!-- Subtle scan lines -->
+  <g opacity="0.03">
+    <rect x="0" y="0" width="1920" height="2" fill="#ffffff">
+      <animate attributeName="y" from="0" to="1080" dur="8s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="0" y="540" width="1920" height="2" fill="#ffffff">
+      <animate attributeName="y" from="540" to="1620" dur="8s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+</svg>
