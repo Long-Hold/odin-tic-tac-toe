@@ -281,5 +281,28 @@ const gameFlow = (function() {
     return {playGame};
 })();
 
+const gameUIController = (function() {
+    /**Handles interactions with the UI and communicates with
+     * the gameBoard object to maintain a consistent state between
+     * the UI and internal game state tracking
+     */
+    const gameGridNode = document.querySelector('.gamegrid');
+    gameGridNode.addEventListener('click', (event) => passGridPosition(event));
+
+    // Receives the coordinates of a clicked grid cell
+    const passGridPosition = (event) => {
+        // Ignore if the click was not on a div container
+        if (!event.target.dataset.position) {
+            return;
+        }
+
+        const nodeDataset = event.target.dataset.position;
+        // Convert the dataset string to a set of X, Y coordinates
+        const coords = Array.from(nodeDataset, Number);
+        
+        console.log(coords);
+    }
+})();
+
 const playerX = createPlayer('X');
 const playerO = createPlayer('O');
