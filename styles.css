@@ -5,7 +5,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    appearance: none;
+    /* appearance: none; */
 }
 
 :root {
@@ -31,3 +31,18 @@ body {
     min-height: 100vh;
 }
 /* ---- End of background styling ---- */
+
+/* ---- Positioning styles ---- */
+body {
+    display: grid;
+}
+
+.gamegrid {
+    border: 1px solid red;
+    
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    padding: 0.6rem;
+}
