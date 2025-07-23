@@ -8,6 +8,35 @@
     <title>Tic Tac Toe</title>
 </head>
 <body>
+    <section>
+        <form id="game-setup" action="" method="post">
+            <fieldset>
+                <legend>Choose Game Mode</legend>
+                <p>
+                    <input type="radio" id="pvp" name="gameMode" value="player-vs-player">
+                    <label for="pvp">Player vs Player</label>
+                </p>
+                <p>
+                    <input type="radio" id="pvb" name="gameMode" value="player-vs-bot">
+                    <label for="pvb">Player vs Bot</label>
+                </p>
+            </fieldset>
+
+            <fieldset>
+                <legend>Player 1 Symbol</legend>
+                <p>
+                    <input type="radio" id="x-symbol" name="playerSymbol" value="X">
+                    <label for="x-symbol">X</label>
+                </p>
+                <p>
+                    <input type="radio" id="o-symbol" name="playerSymbol" value="O">
+                    <label for="o-symbol">O</label>
+                </p>
+            </fieldset>
+
+            <button type="submit">Start Game</button>
+        </form>
+    </section>
     <section class="gamegrid">
         <div data-position="00"></div>
         <div data-position="01"></div>
