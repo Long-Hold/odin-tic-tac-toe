@@ -286,11 +286,13 @@ const gameUIController = (function() {
      * the gameBoard object to maintain a consistent state between
      * the UI and internal game state tracking
      */
+
+    let coords = null;
     const gameGridNode = document.querySelector('.gamegrid');
-    gameGridNode.addEventListener('click', (event) => passGridPosition(event));
+    gameGridNode.addEventListener('click', (event) => getGridPosition(event));
 
     // Receives the coordinates of a clicked grid cell
-    const passGridPosition = (event) => {
+    const getGridPosition = (event) => {
         // Ignore if the click was not on a div container
         if (!event.target.dataset.position) {
             return;
@@ -298,8 +300,7 @@ const gameUIController = (function() {
 
         const nodeDataset = event.target.dataset.position;
         // Convert the dataset string to a set of X, Y coordinates
-        const coords = Array.from(nodeDataset, Number);
-        
+        coords = Array.from(nodeDataset, Number);
         console.log(coords);
     }
 })();
