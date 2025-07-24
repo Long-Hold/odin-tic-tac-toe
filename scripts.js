@@ -305,6 +305,7 @@ const gameUIController = (function() {
         console.log(coords);
     }
 
+    // Transfers the selected grid coordinates to the gameFlow controller
     const transferGridPosition = () => {
         if (coords === null) {
             return;
@@ -313,6 +314,7 @@ const gameUIController = (function() {
         return gameFlow.playGame(coords);
     }
 
+    // Updates a grid square to match the internal grid state
     const updateGridUI = (event) => {
         const [x, y] = coords;
         event.target.textContent = gameBoard.getBoard()[x][y];
