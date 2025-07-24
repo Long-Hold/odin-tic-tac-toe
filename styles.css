@@ -38,6 +38,10 @@ body {
     flex-flow: column nowrap;
 }
 
+.game-over-container {
+    display: none;
+}
+
 .gamegrid {
     border: 1px solid red;
 
@@ -45,6 +49,9 @@ body {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     padding: 0.6rem;
+
+    /* Temporary removal */
+    display: none;
 }
 /* ---- End of positioning styling ---- */
 
