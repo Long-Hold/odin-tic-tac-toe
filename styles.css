@@ -47,6 +47,12 @@ section:has(form), form {
     gap: 1rem;
 }
 
+form fieldset:nth-child(2) {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+}
+
 .gamegrid {
     border: 1px solid red;
 
