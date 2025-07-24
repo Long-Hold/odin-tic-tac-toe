@@ -39,6 +39,14 @@ body {
     justify-content: center;
 }
 
+section:has(form), form {
+    display: flex;
+    flex-flow: column nowrap;
+
+    align-items: center;
+    gap: 1rem;
+}
+
 .gamegrid {
     border: 1px solid red;
 
