@@ -301,7 +301,16 @@ const gameUIController = (function() {
         const nodeDataset = event.target.dataset.position;
         // Convert the dataset string to a set of X, Y coordinates
         coords = Array.from(nodeDataset, Number);
+        transferGridPosition(coords);
         console.log(coords);
+    }
+
+    const transferGridPosition = () => {
+        if (coords === null) {
+            return;
+        }
+
+        gameFlow.playGame(coords);
     }
 })();
 
