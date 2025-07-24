@@ -5,13 +5,33 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    /* appearance: none; */
+    appearance: none;
 }
 
 :root {
     font-size: max(16px, 1rem);
     line-height: 1.6;
     color: white;
+}
+
+button {
+    color: black;
+    background-color: rgb(224, 231, 24);
+
+    padding: 0.4rem 1rem;
+
+    width: 250px;
+
+    font-size: 1.2rem;
+
+    border-radius: 10px;
+    border: 4px solid black;
+}
+
+button:hover {
+    background-color: rgb(247, 255, 10);
+    border: 2px solid rgb(92, 93, 93);
+    transform: scale(1.1);
 }
 
 html {
@@ -62,6 +82,9 @@ form fieldset:nth-child(2) {
     padding: 0.6rem;
 }
 /* ---- End of positioning styling ---- */
+
+/* ---- Form styling ---- */
+/* ---- End of form styling ---- */
 
 /* ---- gamegrid Visual styling ---- */
 .gamegrid div {
