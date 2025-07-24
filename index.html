@@ -8,6 +8,9 @@
     <title>Tic Tac Toe</title>
 </head>
 <body>
+    <!-- This container is visible upon page load -->
+    <!-- Disappears upon user submission -->
+    <!-- Re appears if user selects 'New Game' -->
     <section>
         <form id="game-setup" action="" method="post">
             <fieldset>
@@ -38,12 +41,15 @@
         </form>
     </section>
 
+    <!-- This container only appears after the game has been won -->
     <div class="game-over-container">
-        <h1>Player Wins!</h1>
-        <section>
-            <button type="button" id="rematch">Rematch</button>
-            <button type="button" id="new-game">New Game</button>
-        </section>
+        <dialog closedby="none" open>
+            <h1>Player Wins!</h1>
+            <section>
+                <button type="button" id="rematch">Rematch</button>
+                <button type="button" id="new-game">New Game</button>
+            </section>
+        </dialog>
     </div>
 
     <section class="gamegrid">
