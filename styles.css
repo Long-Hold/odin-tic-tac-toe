@@ -34,7 +34,8 @@ body {
 
 /* ---- Positioning styles ---- */
 body {
-    display: grid;
+    display: flex;
+    flex-flow: column nowrap;
 }
 
 .gamegrid {
