@@ -265,18 +265,17 @@ const gameFlow = (function() {
      *      If not terminal, await next tile placement
      */
 
-    const playGame = (playerX, playerO) => {
-        // Checks if the board is in a playable state
-        // Meaning there is no win condition yet or there are still empty spaces
-        while (gameBoard.isTerminal() === false) {
-            let position = window.prompt('Coords: ');
-            let coords = position.split(',').map(Number);
-            gameBoard.player() === playerX.playerSymbol ? playerX.makeMove(coords) : playerO.makeMove(coords);
-            console.log(gameBoard.getBoard());
+    const playGame = (coords) => {
+        /**Takes an array containing the X, Y position of the move
+         * 
+         * Checks if game is terminal, if not, calls the player responsible for the move
+         * and passes the coordinates to them
+         */
+        gameBoard.player() === playerX.playerSymbol ? playerX.makeMove(coords) : playerO.makeMove(coords);
+        if (gameBoard.isTerminal()) {
+            return gameBoard.getWinner();
         }
-
-        // If the while loop breaks, return the win condition
-        return gameBoard.getWinner();
+        return gameBoard.getBoard();
     }
     return {playGame};
 })();
@@ -310,7 +309,7 @@ const gameUIController = (function() {
             return;
         }
 
-        gameFlow.playGame(coords);
+        return gameFlow.playGame(coords);
     }
 })();
 
