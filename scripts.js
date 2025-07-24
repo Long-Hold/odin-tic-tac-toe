@@ -300,7 +300,8 @@ const gameUIController = (function() {
         const nodeDataset = event.target.dataset.position;
         // Convert the dataset string to a set of X, Y coordinates
         coords = Array.from(nodeDataset, Number);
-        transferGridPosition(coords);
+        transferGridPosition();
+        updateGridUI(event);
         console.log(coords);
     }
 
@@ -310,6 +311,11 @@ const gameUIController = (function() {
         }
 
         return gameFlow.playGame(coords);
+    }
+
+    const updateGridUI = (event) => {
+        const [x, y] = coords;
+        event.target.textContent = gameBoard.getBoard()[x][y];
     }
 })();
 
