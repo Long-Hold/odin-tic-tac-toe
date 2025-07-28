@@ -98,6 +98,15 @@ form {
         width: 75%;
     }
 }
+
+fieldset {
+    padding: 0.5rem;
+    border: none;
+
+    & legend {
+        text-align: center;
+    }
+}
 /* ---- End of form styling ---- */
 
 /* ---- gamegrid Visual styling ---- */
