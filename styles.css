@@ -115,9 +115,13 @@ fieldset {
     border-bottom: 1px solid gray;
 }
 
-label:has(input:checked) {
-    border: 2px solid var(--selected-green);
+label {
+    border: 2px solid red;
     border-radius: 10px;
+}
+
+label:has(input:checked) {
+    border-color: var(--selected-green);
 }
 
 /* ---- End of form styling ---- */
