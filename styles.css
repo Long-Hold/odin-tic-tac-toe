@@ -115,7 +115,7 @@ fieldset {
     width: 100%;
 }
 
-p {
+p:has(label) {
     border: 2px solid red;
     border-radius: 10px;
     padding: 0.4rem;
