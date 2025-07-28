@@ -112,6 +112,7 @@ form {
 fieldset {
     padding: 0.5rem;
     border: none;
+    border-bottom: 1px solid gray;
 }
 
 label:has(input:checked) {
