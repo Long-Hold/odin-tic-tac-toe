@@ -13,12 +13,14 @@
     color: white;
 
     --static-yellow: rgb(224, 231, 24);
+    --hover-yellow: rgb(247, 255, 10);
+
     --selected-green: rgb(17, 255, 0);
 }
 
 button {
     color: black;
-    background-color: rgb(224, 231, 24);
+    background-color: var(--static-yellow);
 
     padding: 0.4rem 1rem;
 
@@ -31,7 +33,7 @@ button {
 }
 
 button:hover {
-    background-color: rgb(247, 255, 10);
+    background-color: var(--hover-yellow);
     border: 2px solid rgb(92, 93, 93);
     transform: scale(1.1);
 }
