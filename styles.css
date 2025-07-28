@@ -133,7 +133,7 @@ p:has(label) {
     padding: 0.2rem;
 
     transition: 0.5s;
-    box-shadow: 1px 1px 5px rgb(242, 0, 255);
+    box-shadow: 1px 1px rgb(242, 0, 255);
 
     &:has(label):hover {
         background-color: rgb(40, 0, 237);
@@ -142,7 +142,7 @@ p:has(label) {
 
 p:has(input:checked) {
     border: 2px solid var(--selected-green);
-    box-shadow: 2px 2px 5px var(--selected-green);
+    box-shadow: 2px 2px var(--selected-green);
     background-color: var(--transprent-green);
 }
 
