@@ -115,13 +115,13 @@ fieldset {
     width: 100%;
 }
 
-label {
+p {
     border: 2px solid red;
     border-radius: 10px;
     padding: 0.4rem;
 }
 
-label:has(input:checked) {
+p:has(input:checked) {
     border-color: var(--selected-green);
 }
 
