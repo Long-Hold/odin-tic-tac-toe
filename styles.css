@@ -11,6 +11,9 @@
     font-size: max(16px, 1rem);
     line-height: 1.6;
     color: white;
+
+    --static-yellow: rgb(224, 231, 24);
+    --selected-green: rgb(17, 255, 0);
 }
 
 button {
@@ -108,6 +111,12 @@ fieldset {
     padding: 0.5rem;
     border: none;
 }
+
+label:has(input:checked) {
+    border: 2px solid var(--selected-green);
+    border-radius: 10px;
+}
+
 /* ---- End of form styling ---- */
 
 /* ---- gamegrid Visual styling ---- */
