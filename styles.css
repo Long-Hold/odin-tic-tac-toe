@@ -33,12 +33,18 @@ button {
 
     border-radius: 10px;
     border: 4px solid black;
+
+    transition: 0.5s;
 }
 
 button:hover {
     background-color: var(--hover-yellow);
-    border: 2px solid rgb(92, 93, 93);
-    transform: scale(1.1);
+    border-color: rgb(92, 93, 93);
+}
+
+button:active {
+    background-color: var(--selected-green);
+    transition: 0.2s;
 }
 
 input[type=radio] {
