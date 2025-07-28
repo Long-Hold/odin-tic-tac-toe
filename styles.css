@@ -12,6 +12,8 @@
     line-height: 1.6;
     color: white;
 
+    --transparent-drk-blue: rgba(40, 0, 237, 0.35);
+
     --static-yellow: rgb(224, 231, 24);
     --hover-yellow: rgb(247, 255, 10);
 
@@ -119,7 +121,7 @@ p:has(label) {
     border: 2px solid red;
     border-radius: 10px;
 
-    background-color:rgba(40, 0, 237, 0.35);
+    background-color:var(--transparent-drk-blue);
 
     padding: 0.2rem;
 
