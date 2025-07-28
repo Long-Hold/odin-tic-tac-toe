@@ -18,6 +18,7 @@
     --hover-yellow: rgb(247, 255, 10);
 
     --selected-green: rgb(17, 255, 0);
+    --transprent-green: rgba(30, 255, 0, 0.5);
 }
 
 button {
@@ -118,7 +119,7 @@ fieldset {
 }
 
 p:has(label) {
-    border: 2px solid red;
+    /* border: 2px solid red; */
     border-radius: 10px;
 
     background-color:var(--transparent-drk-blue);
@@ -126,10 +127,13 @@ p:has(label) {
     padding: 0.2rem;
 
     transition: 0.5s;
+    box-shadow: 1px 1px 5px rgb(242, 0, 255);
 }
 
 p:has(input:checked) {
-    border-color: var(--selected-green);
+    border: 2px solid var(--selected-green);
+    box-shadow: 2px 2px 5px var(--selected-green);
+    background-color: var(--transprent-green);
 }
 
 /* ---- End of form styling ---- */
