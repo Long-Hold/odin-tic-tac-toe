@@ -84,6 +84,18 @@ form fieldset:nth-child(2) {
 /* ---- End of positioning styling ---- */
 
 /* ---- Form styling ---- */
+form {
+    border: 4px solid red;
+    border-radius: 10px;
+    
+    width: 100%;
+
+    padding: .6rem;
+    
+    > * {
+        width: 75%;
+    }
+}
 /* ---- End of form styling ---- */
 
 /* ---- gamegrid Visual styling ---- */
