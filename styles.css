@@ -97,6 +97,8 @@ form {
 
     padding: .6rem;
 
+    text-align: center;
+
     > * {
         width: 75%;
     }
@@ -105,10 +107,6 @@ form {
 fieldset {
     padding: 0.5rem;
     border: none;
-
-    & legend {
-        text-align: center;
-    }
 }
 /* ---- End of form styling ---- */
 
