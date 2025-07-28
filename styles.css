@@ -129,6 +129,10 @@ p:has(label) {
     transition: 0.5s;
     box-shadow: 1px 1px rgb(242, 0, 255);
 
+    display: flex;
+    flex-flow: row nowrap;
+
+    justify-content: center;
     &:has(label):hover {
         background-color: rgb(40, 0, 237);
     }
@@ -138,6 +142,10 @@ p:has(input:checked) {
     border: 2px solid var(--selected-green);
     box-shadow: 2px 2px var(--selected-green);
     background-color: var(--transprent-green);
+}
+
+label {
+    flex: 1;
 }
 
 /* ---- End of form styling ---- */
