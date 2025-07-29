@@ -386,5 +386,19 @@ const formController = (function() {
     return {getGameSetup};
 })();
 
+// Controls the container that appears when board becomes terminal
+const gameOverUIController = (function() {
+    const gameOverCntnr = document.querySelector('.game-over-container');
+    
+    gameOverCntnr.addEventListener('click', (event) => {
+        // Only process clicks coming from the restart buttons
+        if (event.target.tagName !== 'BUTTON') {
+            return;
+        }
+
+
+    })
+})();
+
 const playerX = createPlayer('X');
 const playerO = createPlayer('O');
