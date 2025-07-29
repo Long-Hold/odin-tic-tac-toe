@@ -324,6 +324,8 @@ const gameUIController = (function() {
 // Controls the game mode form
 const formController = (function() {
     const gameSetUpForm = document.getElementById('game-setup');
+    let gameMode;
+    let playerOneSymbol;
 
     gameSetUpForm.addEventListener('submit', (event) => {
         event.preventDefault();
@@ -331,13 +333,18 @@ const formController = (function() {
     })
 
     const gameSetupData = (event) => {
-        /**Returns an array containing the selected game mode
-         * and the chosen symbol for the player.
+        /**Assigns the selected game mode
+         * and player one symbol to internal values
          */
         const formData = new FormData(event.target);
 
-        return [formData.get('gameMode'), formData.get('playerSymbol')];
+        gameMode = formData.get('gameMode');
+        playerOneSymbol = formData.get('playerSymbol');
     }
+
+    const getGameSetup = () => [gameMode, playerOneSymbol];
+
+    return {getGameSetup};
 })();
 
 const playerX = createPlayer('X');
