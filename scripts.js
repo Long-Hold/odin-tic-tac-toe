@@ -444,6 +444,9 @@ const gameOverUIController = (function() {
         // Select the h1 element that will display the custom message
         const winStateMessageNode = gameOverCntnr.firstElementChild;
         const winnerSymbol = getWinnerSymbol();
+        
+        // Appens the winner symbol to the span element within the win message
+        winStateMessageNode.firstElementChild.append(winnerSymbol)
     }
 
     const getWinnerSymbol = () => {
