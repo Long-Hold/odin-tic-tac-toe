@@ -161,6 +161,13 @@ label {
 .gamegrid div {
     border: 2px solid white;
     background-color: rgba(39, 38, 39, 0.5);
+
+    display: flex;
+    justify-content: center;
+    > img {
+        max-width: 85%;
+        aspect-ratio: 1;
+    }
 }
 
 /* TEMPORARY HIDDEN ELEMENTS */
