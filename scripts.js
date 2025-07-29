@@ -326,7 +326,7 @@ const gameUIController = (function() {
             return;
         }
 
-       gameGridNode.style.display = 'block';
+       gameGridNode.style.display = 'grid';
     }
 
     return {displayGameBoard};
