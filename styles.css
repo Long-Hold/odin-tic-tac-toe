@@ -168,7 +168,6 @@ label {
 .game-over-container > :first-child :first-child {
     height: 1.5em;
     position: absolute;
-    transition: 0.4s;
 }
 /* ---- End of Game Over container styling ---- */
 
