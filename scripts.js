@@ -518,9 +518,15 @@ const currentPlayerUIController = (function() {
         currentPlayerContainer.style.display = 'block';
     }
 
+    const hideContainerNode = () => {
+        if (gameBoard.isTerminal()) {
+            currentPlayerContainer.style.display = 'none';
+        }
+    }
+
     const displayCurrentPlayer = () => symbolNode.src = symbolFileManager.getCurrentSymbol();
 
-    return {displayContainerNode ,displayCurrentPlayer};
+    return {displayContainerNode, hideContainerNode ,displayCurrentPlayer};
 })();
 
 // Stores the paths to the player symbol .svg files and returns them as needed
