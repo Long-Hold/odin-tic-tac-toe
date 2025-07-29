@@ -19,6 +19,9 @@
 
     --selected-green: rgb(17, 255, 0);
     --transprent-green: rgba(30, 255, 0, 0.5);
+
+    --o-symbol: url(./svgs/o_symbol.svg);
+    --x-symbol: url(./svgs/x_symbol.svg);
 }
 
 button {
