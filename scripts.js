@@ -319,6 +319,17 @@ const gameUIController = (function() {
         const [x, y] = coords;
         event.target.textContent = gameBoard.getBoard()[x][y];
     }
+
+    const displayGameBoard = (event) => {
+        if (event.target.tagName !== 'FORM') {
+            console.log('invalid');
+            return;
+        }
+
+       gameGridNode.style.display = 'block';
+    }
+
+    return {displayGameBoard};
 })();
 
 // Controls the game mode form
@@ -333,6 +344,7 @@ const formController = (function() {
 
         // Hide the section container that holds the form and header
         gameSetUpForm.parentNode.style.display = "none";
+        gameUIController.displayGameBoard(event);
     })
 
     const gameSetupData = (event) => {
