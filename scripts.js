@@ -266,6 +266,18 @@ const gameFlow = (function() {
      *      If not terminal, await next tile placement
      */
 
+    // Takes an event and ensures it came from the form
+    // Intializes the UI elements of the game
+    const initializeUI = (event) => {
+        if (event.target.tagName !== 'FORM') {
+            console.error("Error: Only game form submission can initialize a game");
+            return;
+        }
+
+        currentPlayerUIController.displayCurrentPlayer();
+        gameUIController.displayGameBoard(event);
+    }
+
     const playGame = (coords) => {
         /**Takes an array containing the X, Y position of the move
          * 
@@ -273,6 +285,7 @@ const gameFlow = (function() {
          * and passes the coordinates to them
          */
         gameBoard.player() === playerX.playerSymbol ? playerX.makeMove(coords) : playerO.makeMove(coords);
+        currentPlayerUIController.displayCurrentPlayer();
         if (gameBoard.isTerminal()) {
             activateTerminalUIStates();
             return gameBoard.getWinner();
@@ -287,7 +300,7 @@ const gameFlow = (function() {
         gameUIController.freezeGridUI();
         gameOverUIController.displayGameOverContainer();
     }
-    return {playGame};
+    return {initializeUI, playGame};
 })();
 
 // Manages the interactive game board
