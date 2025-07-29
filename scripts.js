@@ -300,9 +300,11 @@ const gameFlow = (function() {
 
     const activateTerminalUIStates = () => {
         /**Freezes the game grid UI
+         * Hides the current player container
          * Displays the game over container
          */
         gameUIController.freezeGridUI();
+        currentPlayerUIController.hideContainerNode();
         gameOverUIController.displayGameOverContainer();
     }
     return {initializeUI, playGame};
