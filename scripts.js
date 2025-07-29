@@ -274,10 +274,18 @@ const gameFlow = (function() {
          */
         gameBoard.player() === playerX.playerSymbol ? playerX.makeMove(coords) : playerO.makeMove(coords);
         if (gameBoard.isTerminal()) {
-            gameUIController.freezeGridUI();
+            activateTerminalUIStates();
             return gameBoard.getWinner();
         }
         return gameBoard.getBoard();
+    }
+
+    const activateTerminalUIStates = () => {
+        /**Freezes the game grid UI
+         * Displays the game over container
+         */
+        gameUIController.freezeGridUI();
+        gameOverUIController.displayGameOverContainer();
     }
     return {playGame};
 })();
