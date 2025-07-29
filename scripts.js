@@ -316,8 +316,16 @@ const gameUIController = (function() {
 
     // Updates a grid square to match the internal grid state
     const updateGridUI = (event) => {
+        /**Creates an img node that stores the image of the selected tile
+         * This newly created node is then appended to the selected div container.
+         */
         const [x, y] = coords;
-        event.target.textContent = gameBoard.getBoard()[x][y];
+
+        const symbol = document.createElement('img');
+        const imgSource = gameBoard.getBoard()[x][y] === 'X' ? 'svgs/x_symbol.svg' : 'svgs/o_symbol.svg';
+
+        symbol.src = imgSource;
+        event.target.appendChild(symbol);
     }
 
     const displayGameBoard = (event) => {
