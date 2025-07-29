@@ -396,8 +396,23 @@ const gameOverUIController = (function() {
             return;
         }
 
+        switch (event.target.id) {
+            case 'rematch':
+                console.log('TODO! Add rematch functionality!');
+                break;
 
+            case 'new-game':
+                resetState();
+                break;
+
+            default:
+                console.error('Invalid case passed to event listener');
+                break;
+        }
     })
+
+    // Reloads the webpage, effectively resetting everything
+    const resetState = () => window.location.reload();
 })();
 
 const playerX = createPlayer('X');
