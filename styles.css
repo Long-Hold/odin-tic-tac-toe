@@ -158,7 +158,9 @@ label {
 /* ---- End of form styling ---- */
 
 /* ---- Game Over container styling ---- */
-
+.game-over-container {
+    text-align: center;
+}
 
 /* ---- End of Game Over container styling ---- */
 
