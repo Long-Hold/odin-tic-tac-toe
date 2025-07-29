@@ -480,7 +480,7 @@ const gameOverUIController = (function() {
 
 // Updates the current player UI with the symbol of the respective player
 const currentPlayerUIController = (function() {
-    const currentPlayerNode = document.querySelector('current-player-display').firstElementChild.firstElementChild;
+    const currentPlayerNode = document.querySelector('.current-player-display').firstElementChild.firstElementChild;
     const symbolNode = document.createElement('img');
 
     currentPlayerNode.appendChild(symbolNode);
