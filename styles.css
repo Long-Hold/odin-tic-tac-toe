@@ -92,6 +92,9 @@ section:has(form), form {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     padding: 0.6rem;
+
+    width: max(300px, 75%);
+    aspect-ratio: 1;
 }
 /* ---- End of positioning styling ---- */
 
