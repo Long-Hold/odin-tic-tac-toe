@@ -185,7 +185,7 @@ label {
     > :first-child {
         display: flex;
     }
-    
+
     > :first-child :first-child {
         height: 1.5em;
     }
@@ -207,10 +207,10 @@ label {
 /* ---- end of gamegrid styling ---- */
 
 /* TEMPORARY HIDDEN ELEMENTS */
-/* .game-over-container, .gamegrid, .current-player-display {
-    display: none;
-} */
-
-section:has(form), .game-over-container {
+.game-over-container, .gamegrid, .current-player-display {
     display: none;
 }
+
+/* section:has(form), .game-over-container {
+    display: none;
+} */
