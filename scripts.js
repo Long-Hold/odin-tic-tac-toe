@@ -274,7 +274,12 @@ const gameFlow = (function() {
             return;
         }
 
+        // Make the current player text visible
+        currentPlayerUIController.displayContainerNode(event);
+        // Update the current player display for the first time
         currentPlayerUIController.displayCurrentPlayer();
+
+        // Make the gamegrid UI visible
         gameUIController.displayGameBoard(event);
     }
 
@@ -495,14 +500,27 @@ const gameOverUIController = (function() {
 
 // Updates the current player UI with the symbol of the respective player
 const currentPlayerUIController = (function() {
-    const currentPlayerNode = document.querySelector('.current-player-display').firstElementChild.firstElementChild;
+    const currentPlayerContainer = document.querySelector('.current-player-display');
+    const currentPlayerNode = currentPlayerContainer.firstElementChild.firstElementChild;
     const symbolNode = document.createElement('img');
 
     currentPlayerNode.appendChild(symbolNode);
 
+    const displayContainerNode = (event) => {
+        /**Upon game settings form submission,
+         * this container can be made visible
+         */
+        if (event.target.tagName !== 'FORM') {
+            console.error('Error: Current Player UI can only be displayed upon form submission.');
+            return;
+        }
+
+        currentPlayerContainer.style.display = 'block';
+    }
+
     const displayCurrentPlayer = () => symbolNode.src = symbolFileManager.getCurrentSymbol();
 
-    return {displayCurrentPlayer};
+    return {displayContainerNode ,displayCurrentPlayer};
 })();
 
 // Stores the paths to the player symbol .svg files and returns them as needed
