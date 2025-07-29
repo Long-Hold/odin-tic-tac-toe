@@ -157,6 +157,10 @@ label {
 }
 
 /* TEMPORARY HIDDEN ELEMENTS */
-.game-over-container, .gamegrid {
+/* .game-over-container, .gamegrid {
+    display: none;
+} */
+
+section:has(form), .game-over-container {
     display: none;
 }
