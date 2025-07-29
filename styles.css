@@ -193,10 +193,10 @@ label {
 /* ---- end of gamegrid styling ---- */
 
 /* TEMPORARY HIDDEN ELEMENTS */
-.game-over-container {
+/* .game-over-container, .gamegrid, .current-player-display {
     display: none;
-}
+} */
 
-section:has(form) {
+section:has(form), .game-over-container {
     display: none;
 }
