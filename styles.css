@@ -193,9 +193,9 @@ label {
 /* ---- end of gamegrid styling ---- */
 
 /* TEMPORARY HIDDEN ELEMENTS */
-/* .game-over-container, .gamegrid {
+.game-over-container {
     display: none;
-} */
+}
 
 section:has(form) {
     display: none;
