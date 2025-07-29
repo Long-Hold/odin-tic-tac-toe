@@ -478,10 +478,16 @@ const gameOverUIController = (function() {
     return {displayGameOverContainer};
 })();
 
+// Updates the current player UI with the symbol of the respective player
 const currentPlayerUIController = (function() {
     const currentPlayerNode = document.querySelector('current-player-display').firstElementChild.firstElementChild;
+    const symbolNode = document.createElement('img');
 
+    currentPlayerNode.appendChild(symbolNode);
 
+    const displayCurrentPlayer = () => symbolNode.src = symbolFileManager.getCurrentSymbol();
+
+    return {displayCurrentPlayer};
 })();
 
 // Stores the paths to the player symbol .svg files and returns them as needed
