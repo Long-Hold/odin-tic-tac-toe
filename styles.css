@@ -178,6 +178,20 @@ label {
 }
 /* ---- End of Game Over container styling ---- */
 
+/* ---- Current Player Container Styling ---- */
+.current-player-display {
+    font-size: 2rem;
+
+    > :first-child {
+        display: flex;
+    }
+    
+    > :first-child :first-child {
+        height: 1.5em;
+    }
+}
+/* ---- End of Current Player Container Styling ---- */
+
 /* ---- gamegrid Visual styling ---- */
 .gamegrid div {
     border: 2px solid white;
