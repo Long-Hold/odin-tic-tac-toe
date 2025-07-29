@@ -273,6 +273,7 @@ const gameFlow = (function() {
          */
         gameBoard.player() === playerX.playerSymbol ? playerX.makeMove(coords) : playerO.makeMove(coords);
         if (gameBoard.isTerminal()) {
+            gameUIController.freezeGridUI();
             return gameBoard.getWinner();
         }
         return gameBoard.getBoard();
