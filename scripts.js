@@ -321,5 +321,24 @@ const gameUIController = (function() {
     }
 })();
 
+// Controls the game mode form
+const formController = (function() {
+    const gameSetUpForm = document.getElementById('game-setup');
+
+    gameSetUpForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        gameSetupData(event);
+    })
+
+    const gameSetupData = (event) => {
+        /**Returns an array containing the selected game mode
+         * and the chosen symbol for the player.
+         */
+        const formData = new FormData(event.target);
+
+        return [formData.get('gameMode'), formData.get('playerSymbol')];
+    }
+})();
+
 const playerX = createPlayer('X');
 const playerO = createPlayer('O');
