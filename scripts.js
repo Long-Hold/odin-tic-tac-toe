@@ -300,6 +300,11 @@ const gameUIController = (function() {
         const nodeDataset = event.target.dataset.position;
         // Convert the dataset string to a set of X, Y coordinates
         coords = Array.from(nodeDataset, Number);
+
+        // If the internal grid shows this square as taken, ignore input
+        if (gameBoard.getBoard()[coords[0]][coords[1]] !== null) {
+            return;
+        }
         transferGridPosition();
         updateGridUI(event);
         console.log(coords);
