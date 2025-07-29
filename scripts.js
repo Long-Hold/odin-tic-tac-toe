@@ -442,7 +442,8 @@ const gameOverUIController = (function() {
          */
 
         // Select the h1 element that will display the custom message
-        const winStateMessage = gameOverCntnr.firstElementChild;
+        const winStateMessageNode = gameOverCntnr.firstElementChild;
+        const winnerSymbol = getWinnerSymbol();
     }
 
     const getWinnerSymbol = () => {
@@ -451,12 +452,16 @@ const gameOverUIController = (function() {
          * Returns the .svg image of the respective winner, or TIE if no winner was found
          * in the terminal board.
          */
+
+        const imageNode = document.createElement('img');
         switch(gameBoard.getWinner()) {
             case 'X':
-                return './svgs/x_symbol.svg';
+                imageNode.src = './svgs/x_symbol.svg';
+                return imageNode;
 
             case 'O':
-                return './svgs/o_symbol.svg';
+                imageNode.src = './svgs/o_symbol.svg';
+                return imageNode
             
             case null:
                 return 'TIE';
