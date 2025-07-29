@@ -51,7 +51,7 @@ input[type=radio] {
     appearance: none;
 }
 
-html {
+html, body {
     background-color: rgb(28, 28, 28);
     height: 100%;
 }
