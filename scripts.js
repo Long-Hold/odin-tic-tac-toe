@@ -353,7 +353,12 @@ const gameUIController = (function() {
         }
     };
 
-    return {displayGameBoard, freezeGridUI};
+    const unfreezeGridUI = () => {
+        gameGridNode.style.pointerEvents = 'auto';
+        console.log('Game Grid UI un-frozen.');
+    }
+
+    return {displayGameBoard, freezeGridUI, unfreezeGridUI};
 })();
 
 // Controls the game mode form
