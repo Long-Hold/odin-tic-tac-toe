@@ -255,6 +255,7 @@ function createPlayer(symbol, isAI = false) {
     return {playerSymbol, status, makeMove};
 }
 
+// Calls the correct game process in order
 const gameFlow = (function() {
     /**Controls the game flow logic.
      * 
@@ -281,6 +282,7 @@ const gameFlow = (function() {
     return {playGame};
 })();
 
+// Manages the interactive game board
 const gameUIController = (function() {
     /**Handles interactions with the UI and communicates with
      * the gameBoard object to maintain a consistent state between
