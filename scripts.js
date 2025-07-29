@@ -430,6 +430,40 @@ const gameOverUIController = (function() {
     const displayGameOverContainer = () => {
         if (gameBoard.isTerminal()) {
             gameOverCntnr.style.display = 'block';
+            displayGameOverMessage();
+        }
+    }
+
+    const displayGameOverMessage = () => {
+        /**Displays a custom game over message depending on the terminal condition.
+         * If gameBoard is terminal and there is no winner, then display "No Winner!"
+         * 
+         * Otherwise display the symbol of the winning player.
+         */
+
+        // Select the h1 element that will display the custom message
+        const winStateMessage = gameOverCntnr.firstElementChild;
+    }
+
+    const getWinnerSymbol = () => {
+        /**This method is called during the game over message display process.
+         * 
+         * Returns the .svg image of the respective winner, or TIE if no winner was found
+         * in the terminal board.
+         */
+        switch(gameBoard.getWinner()) {
+            case 'X':
+                return './svgs/x_symbol.svg';
+
+            case 'O':
+                return './svgs/o_symbol.svg';
+            
+            case null:
+                return 'TIE';
+            
+            default:
+                console.error('No valid win state found.');
+                return;
         }
     }
 
