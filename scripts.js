@@ -478,5 +478,20 @@ const gameOverUIController = (function() {
     return {displayGameOverContainer};
 })();
 
+const currentPlayerUIController = (function() {
+    const currentPlayerNode = document.querySelector('current-player-display').firstElementChild.firstElementChild;
+
+
+})();
+
+// Stores the paths to the player symbol .svg files and returns them as needed
+const symbolFileManager = (function() {
+    const xSymbol = './svgs/x_symbol.svg';
+    const oSymbol = './svgs/o_symbol.svg';
+
+    const getCurrentSymbol = () => gameBoard.player() === 'X' ? xSymbol : oSymbol;
+    return {getCurrentSymbol};
+})();
+
 const playerX = createPlayer('X');
 const playerO = createPlayer('O');
