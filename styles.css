@@ -164,6 +164,12 @@ label {
     text-align: center;
 }
 
+/* Select the span element within the h1 element */
+.game-over-container > :first-child :first-child {
+    height: 1.5em;
+    position: absolute;
+    transition: 0.4s;
+}
 /* ---- End of Game Over container styling ---- */
 
 /* ---- gamegrid Visual styling ---- */
