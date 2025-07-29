@@ -418,6 +418,14 @@ const gameOverUIController = (function() {
 
     // Reloads the webpage, effectively resetting everything
     const resetState = () => window.location.reload();
+
+    const displayGameOverContainer = () => {
+        if (gameBoard.isTerminal()) {
+            gameOverCntnr.style.display = 'block';
+        }
+    }
+
+    return {displayGameOverContainer};
 })();
 
 const playerX = createPlayer('X');
