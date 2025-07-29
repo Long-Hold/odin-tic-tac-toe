@@ -394,7 +394,9 @@ const formController = (function() {
 
         // Hide the section container that holds the form and header
         gameSetUpForm.parentNode.style.display = "none";
-        gameUIController.displayGameBoard(event);
+
+        // Call on gameFlow module to initialize the UI
+        gameFlow.initializeUI(event);
     })
 
     const gameSetupData = (event) => {
