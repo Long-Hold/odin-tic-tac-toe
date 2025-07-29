@@ -164,10 +164,17 @@ label {
     text-align: center;
 }
 
+/* Custom animation ruleset for the element */
+@keyframes scaleIn {
+    from {transform: scale(0);}
+    to {transform: scale(1);}
+}
+
 /* Select the span element within the h1 element */
 .game-over-container > :first-child :first-child {
     height: 1.5em;
     position: absolute;
+    animation: scaleIn 0.5s ease-out;
 }
 /* ---- End of Game Over container styling ---- */
 
