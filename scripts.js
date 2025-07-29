@@ -330,6 +330,9 @@ const formController = (function() {
     gameSetUpForm.addEventListener('submit', (event) => {
         event.preventDefault();
         gameSetupData(event);
+
+        // Hide the section container that holds the form and header
+        gameSetUpForm.parentNode.style.display = "none";
     })
 
     const gameSetupData = (event) => {
