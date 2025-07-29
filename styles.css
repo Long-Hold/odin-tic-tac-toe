@@ -175,6 +175,6 @@ label {
     display: none;
 } */
 
-section:has(form), .game-over-container {
+section:has(form) {
     display: none;
 }
