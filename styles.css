@@ -165,7 +165,7 @@ label {
     display: flex;
     justify-content: center;
     > img {
-        max-width: 85%;
+        width: 85%;
         aspect-ratio: 1;
     }
 }
