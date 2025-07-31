@@ -344,7 +344,7 @@ const gameFlow = (function() {
         currentPlayerUIController.hideContainerNode();
         gameOverUIController.displayGameOverContainer();
     }
-    return {initializeUI, playGame};
+    return {initializeInternalGameState, initializeUI, playGame};
 })();
 
 // Manages the interactive game board
@@ -439,7 +439,7 @@ const formController = (function() {
         // Hide the section container that holds the form and header
         gameSetUpForm.parentNode.style.display = "none";
 
-        // Call on gameFlow module to initialize the UI
+        gameFlow.initializeInternalGameState(event);
         gameFlow.initializeUI(event);
     })
 
