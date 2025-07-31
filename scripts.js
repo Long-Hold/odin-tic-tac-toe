@@ -285,6 +285,21 @@ const gameFlow = (function() {
         console.log(gameMode, playerOneSymbol);
     }
 
+    const initializeInternalGameState = (event) => {
+        /**Upon form submission, this module method will create the player objects
+         * within this module.
+         * 
+         * Additionally, it will call any relevant gameBoard module methods to initialize the
+         * internal game state
+         */
+        if (event.target.tagName !== 'FORM') {
+            console.error("Only form submission can initialize internal state");
+            return;
+        }
+
+        initializePlayerObjects();
+    }
+
     const initializeUI = (event) => {
         /**To prevent this method being called manually,
          * function param is first compared to its tag name.
