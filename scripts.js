@@ -260,11 +260,16 @@ const gameFlow = (function() {
     /**Controls the game flow logic.
      * 
      * Game flow logic:
-     * 1. Place tile
-     * 2. Check board terminal state:
+     * 1. Initialize player objects.
+     * 2. Initialize interactive UI.
+     * 3. Place tiles (automatically in the case of AI players)
+     * 4. Check board terminal state:
      *      If terminal, return winner or draw state
      *      If not terminal, await next tile placement
      */
+
+    let playerX;
+    let playerO;
 
     const initializeUI = (event) => {
         /**To prevent this method being called manually,
