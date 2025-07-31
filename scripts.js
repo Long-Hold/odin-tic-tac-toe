@@ -266,9 +266,12 @@ const gameFlow = (function() {
      *      If not terminal, await next tile placement
      */
 
-    // Takes an event and ensures it came from the form
-    // Intializes the UI elements of the game
     const initializeUI = (event) => {
+        /**To prevent this method being called manually,
+         * function param is first compared to its tag name.
+         * This ensures only the game setup form can trigger the initialization of
+         * the UI and playspace
+         */
         if (event.target.tagName !== 'FORM') {
             console.error("Error: Only game form submission can initialize a game");
             return;
