@@ -270,6 +270,20 @@ const gameFlow = (function() {
 
     let playerX;
     let playerO;
+    const initializePlayerObjects = () => {
+        /**Assigns game setting form data to the specificed Player One variable
+         * Dependent on Symbol selection.
+         * 
+         * The other object is then automatically created using the only other available symbol
+         * 
+         * If user selects "Player vs Bot", then Player 2 is created with "isAI" set to true as well.
+         */
+
+        // Retrieve the game setup array data
+        // Index[0] = Game Mode, index[1] = Player 1 symbol
+        const [gameMode, playerOneSymbol] = formController.getGameSetup();
+        console.log(gameMode, playerOneSymbol);
+    }
 
     const initializeUI = (event) => {
         /**To prevent this method being called manually,
