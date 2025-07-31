@@ -217,7 +217,7 @@ const gameBoard = (function (){
     // Returns a deep copy of the internal array game state
     const getBoard = () => board.map(row => [...row]);
 
-    return {isSymbolValid, player, placeTile, getEmptyCells, isTerminal, getWinner, getBoard};
+    return {isSymbolValid, player, placeTile, getEmptyCells, isTerminal, getWinner, getBoard, symbolToCharMap};
 })();
 
 function createPlayer(symbol, isAI = false) {
@@ -270,6 +270,8 @@ const gameFlow = (function() {
 
     let playerX;
     let playerO;
+    let AIPlayerStatus = false;
+
     const initializePlayerObjects = () => {
         /**Assigns game setting form data to the specificed Player One variable
          * Dependent on Symbol selection.
@@ -279,10 +281,26 @@ const gameFlow = (function() {
          * If user selects "Player vs Bot", then Player 2 is created with "isAI" set to true as well.
          */
 
-        // Retrieve the game setup array data
-        // Index[0] = Game Mode, index[1] = Player 1 symbol
         const [gameMode, playerOneSymbol] = formController.getGameSetup();
-        console.log(gameMode, playerOneSymbol);
+
+        if (gameMode === "player-vs-bot") {
+            AIPlayerStatus = true;
+        }
+
+        switch (playerOneSymbol) {
+            case gameBoard.symbolToCharMap.X:
+                playerX = createPlayer(playerOneSymbol);
+                playerO = createPlayer('O', AIPlayerStatus);
+                break;
+
+            case gameBoard.symbolToCharMap.O:
+                playerO = createPlayer(playerOneSymbol);
+                playerX = createPlayer('X', AIPlayerStatus);
+                break;
+            
+            default:
+                throw new Error('Player object creation failed');
+        }
     }
 
     const initializeInternalGameState = (event) => {
