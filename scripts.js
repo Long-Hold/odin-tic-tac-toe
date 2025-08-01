@@ -255,12 +255,10 @@ function createPlayer(symbol, isAI = false) {
     return {playerSymbol, status, makeMove};
 }
 
-function createAIPlayer(symbol) {
-    const playerObj = createPlayer(symbol);
+function createAIPlayer() {
     const makeAutomatedMove = () => {
-        const tileChoice = Math.floor(Math.random() * gameBoard.getEmptyCells().length);
-
-        playerObj.makeMove(tileChoice);
+        const availableCells = gameBoard.getEmptyCells();
+        console.log(availableCells);
     }
 
     return {makeAutomatedMove};
