@@ -259,7 +259,9 @@ function createPlayer(symbol, isAI = false) {
             const emptyCells = gameBoard.getEmptyCells();
             const randomIndex = Math.floor(Math.random() * emptyCells.length);
 
-            const chosenTileNode = document.querySelector('.gamegrid').children[randomIndex];
+            const [row, col] = emptyCells[randomIndex];
+
+            const chosenTileNode = document.querySelector(`[data-position="${row}${col}"]`);
             chosenTileNode.click();
 
             // const tileChoice = emptyCells[randomIndex];
@@ -376,6 +378,11 @@ const gameFlow = (function() {
         if (gameBoard.isTerminal()) {
             activateTerminalUIStates();
             return gameBoard.getWinner();
+        }
+
+        const nextPlayer = gameBoard.player() === playerX.playerSymbol ? playerX : playerO;
+        if (nextPlayer.status) {
+            nextPlayer.makeAutomatedMove();
         }
         return gameBoard.getBoard();
     }
