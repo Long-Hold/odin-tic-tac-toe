@@ -225,7 +225,10 @@ const gameBoard = (function (){
         ];
     }
 
-    return {isSymbolValid, player, placeTile, getEmptyCells, isTerminal, getWinner, getBoard, symbolToCharMap, resetBoard};
+    return {
+        isSymbolValid, player, placeTile, 
+        getEmptyCells, isTerminal, getWinner, 
+        getBoard, symbolToCharMap, resetBoard};
 })();
 
 function createPlayer(symbol, isAI = false) {
