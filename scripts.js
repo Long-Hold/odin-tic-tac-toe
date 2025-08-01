@@ -255,6 +255,15 @@ function createPlayer(symbol, isAI = false) {
     return {playerSymbol, status, makeMove};
 }
 
+function createAIPlayer() {
+    const makeAutomatedMove = () => {
+        const availableCells = gameBoard.getEmptyCells();
+        console.log(availableCells);
+    }
+
+    return {makeAutomatedMove};
+}
+
 // Calls the correct game process in order
 const gameFlow = (function() {
     /**Controls the game flow logic.
