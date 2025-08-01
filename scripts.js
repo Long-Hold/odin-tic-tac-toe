@@ -236,6 +236,7 @@ function createPlayer(symbol, isAI = false) {
     }
 
     const playerSymbol = symbol.toUpperCase();
+    const status = isAI;
 
     const makeMove = (position) => {
         if (gameBoard.player() !== playerSymbol) {
@@ -251,7 +252,19 @@ function createPlayer(symbol, isAI = false) {
         }
     }
 
-    return {playerSymbol, status, makeMove};
+    const player = {playerSymbol, status, makeMove};
+
+    if (isAI) {
+        player.makeAutomatedMove = () => {
+            const emptyCells = gameBoard.getEmptyCells();
+            const randomIndex = Math.floor(Math.random() * emptyCells.length);
+            const tileChoice = emptyCells[randomIndex];
+
+            return makeMove(tileChoice);
+        }
+    }
+
+    return player;
 }
 
 function createAIPlayer(symbol) {
