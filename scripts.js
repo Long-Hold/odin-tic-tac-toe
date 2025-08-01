@@ -360,11 +360,13 @@ const gameFlow = (function() {
 
         // Make the current player text visible
         currentPlayerUIController.displayContainerNode(event);
-        // Update the current player display for the first time
         currentPlayerUIController.displayCurrentPlayer();
-
-        // Make the gamegrid UI visible
         gameUIController.displayGameBoard(event);
+
+        // If X is the AI player, trigger their first move
+        if (playerX.status) {
+            triggerAIPlay(playerX);
+        }
     }
 
     const playGame = (coords) => {
