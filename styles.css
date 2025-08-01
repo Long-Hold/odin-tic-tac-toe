@@ -205,7 +205,7 @@ label {
     }
 }
 
-@keyframes changewidth {
+@keyframes shrinkGrowBounce {
   from {
     transform: scale(1);
   }
@@ -217,10 +217,12 @@ label {
 
 .gamegrid div:hover {
     animation-duration: 0.8s;
-    animation-name: changewidth;
+    animation-name: shrinkGrowBounce;
     animation-iteration-count: infinite;
     animation-direction:alternate;
     animation-timing-function: ease-in-out;
+
+
 }
 /* ---- end of gamegrid styling ---- */
 
