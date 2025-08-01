@@ -382,8 +382,12 @@ const gameFlow = (function() {
 
         const nextPlayer = gameBoard.player() === playerX.playerSymbol ? playerX : playerO;
         if (nextPlayer.status) {
-            // Set a time out to make the game feel natural and give the UI time
-            // to update
+            /**If status is true, then this player is an AI
+             * In that case, we call it's automated function.
+             * 
+             * The grid is frozen during this to prevent the human player
+             * from triggering event listeners by clicking the grid while the AI mvoves.
+             */
             gameUIController.freezeGridUI();
             setTimeout(() => {
                 nextPlayer.makeAutomatedMove();
@@ -391,6 +395,14 @@ const gameFlow = (function() {
             }, 500);
         }
         return gameBoard.getBoard();
+    }
+
+    const triggerAIPlay = (AIPlayer) => {
+        gameUIController.freezeGridUI();
+        setTimeout(() => {
+            nextPlayer.makeAutomatedMove();
+            gameUIController.unfreezeGridUI();
+        }, 500);
     }
 
     const activateTerminalUIStates = () => {
