@@ -423,7 +423,13 @@ const gameFlow = (function() {
         currentPlayerUIController.hideContainerNode();
         gameOverUIController.displayGameOverContainer();
     }
-    return {initializeInternalGameState, initializeUI, playGame};
+
+    const handleXAsAI = () => {
+        if (playerX.status) {
+            triggerAIPlay(playerX);
+        }
+    }
+    return {initializeInternalGameState, initializeUI, playGame, handleXAsAI};
 })();
 
 // Manages the interactive game board
@@ -580,6 +586,10 @@ const gameOverUIController = (function() {
 
         currentPlayerUIController.displayContainerNode();
         currentPlayerUIController.displayCurrentPlayer();
+
+        // If player X is the AI player, then it's first move must be triggered
+        // manually
+        gameFlow.handleXAsAI();
     }
 
     const refreshContainer = () => {
