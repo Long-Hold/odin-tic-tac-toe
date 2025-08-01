@@ -255,10 +255,13 @@ function createPlayer(symbol, isAI = false) {
     return {playerSymbol, status, makeMove};
 }
 
-function createAIPlayer() {
+function createAIPlayer(symbol) {
+    const playerObj = createPlayer(symbol);
     const makeAutomatedMove = () => {
-        const availableCells = gameBoard.getEmptyCells();
-        console.log(availableCells);
+        const randomTile = Math.floor(Math.random() * gameBoard.getEmptyCells().length);
+
+        const tileChoice = gameBoard.getEmptyCells[randomTile];
+        playerObj.makeMove(tileChoice);
     }
 
     return {makeAutomatedMove};
@@ -604,5 +607,5 @@ const symbolFileManager = (function() {
     return {getCurrentSymbol};
 })();
 
-const playerX = createPlayer('X');
-const playerO = createPlayer('O');
+// const playerX = createPlayer('X');
+// const playerO = createPlayer('O');
