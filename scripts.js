@@ -505,6 +505,7 @@ const gameUIController = (function() {
 
         // Using a spread '...' to pass out the large collection as individual items
         gameGridNode.replaceChildren(...cellTemps.content.children);
+        unfreezeGridUI();
     }
 
     return {displayGameBoard, freezeGridUI, unfreezeGridUI, resetGridUI};
