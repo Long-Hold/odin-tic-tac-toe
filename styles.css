@@ -227,11 +227,9 @@ label {
 }
 /* ---- end of gamegrid styling ---- */
 
-/* TEMPORARY HIDDEN ELEMENTS */
+/* ---- Default container display states ---- */
+/* These containers are hidden until certain states are met, they are controlled
+via javascript. */
 .game-over-container, .current-player-display, .gamegrid {
     display: none;
 }
-
-/* section:has(form), .game-over-container {
-    display: none;
-} */
