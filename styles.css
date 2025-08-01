@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'syn_novaregular';
+    src: url('./fonts/synnova-regular-webfont.woff2') format('woff2'),
+         url('./fonts/synnova-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* ---- Reset / Normalizing */
 *,
 *::before,
@@ -22,6 +30,8 @@
 
     --o-symbol: url(./svgs/o_symbol.svg);
     --x-symbol: url(./svgs/x_symbol.svg);
+
+    font-family: 'syn_novaregular', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
 }
 
 button {
@@ -38,6 +48,7 @@ button {
     border: 4px solid black;
 
     transition: 0.5s;
+    font: inherit;
 }
 
 button:hover {
