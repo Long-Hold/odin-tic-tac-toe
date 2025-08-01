@@ -236,7 +236,6 @@ function createPlayer(symbol, isAI = false) {
     }
 
     const playerSymbol = symbol.toUpperCase();
-    const status = isAI;
 
     const makeMove = (position) => {
         if (gameBoard.player() !== playerSymbol) {
