@@ -677,6 +677,3 @@ const symbolFileManager = (function() {
     const getCurrentSymbol = () => gameBoard.player() === 'X' ? xSymbol : oSymbol;
     return {getCurrentSymbol};
 })();
-
-// const playerX = createPlayer('X');
-// const playerO = createPlayer('O');
