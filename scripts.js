@@ -489,7 +489,14 @@ const gameUIController = (function() {
         console.log('Game Grid UI un-frozen.');
     }
 
-    return {displayGameBoard, freezeGridUI, unfreezeGridUI};
+    const resetGridUI = () => {
+        const cellTemps = document.querySelector('.grid-cells-template').cloneNode(deep = true);
+
+        // Using a spread '...' to pass out the large collection as individual items
+        gameGridNode.replaceChildren(...cellTemps.content.children);
+    }
+
+    return {displayGameBoard, freezeGridUI, unfreezeGridUI, resetGridUI};
 })();
 
 // Controls the game mode form
