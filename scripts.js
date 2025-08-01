@@ -261,7 +261,7 @@ function createPlayer(symbol, isAI = false) {
 
             const chosenTileNode = document.querySelector('.gamegrid').children[randomIndex];
             chosenTileNode.click();
-            
+
             // const tileChoice = emptyCells[randomIndex];
             // return makeMove(tileChoice);
         }
