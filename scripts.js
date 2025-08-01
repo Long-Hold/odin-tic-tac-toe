@@ -382,7 +382,9 @@ const gameFlow = (function() {
 
         const nextPlayer = gameBoard.player() === playerX.playerSymbol ? playerX : playerO;
         if (nextPlayer.status) {
-            nextPlayer.makeAutomatedMove();
+            // Set a time out to make the game feel natural and give the UI time
+            // to update
+            setTimeout(() => nextPlayer.makeAutomatedMove(), 500);
         }
         return gameBoard.getBoard();
     }
