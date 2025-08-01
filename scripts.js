@@ -554,7 +554,7 @@ const gameOverUIController = (function() {
 
         switch (event.target.id) {
             case 'rematch':
-                console.log('TODO! Add rematch functionality!');
+                rematchState();
                 break;
 
             case 'new-game':
@@ -569,6 +569,14 @@ const gameOverUIController = (function() {
 
     // Reloads the webpage, effectively resetting everything
     const resetState = () => window.location.reload();
+
+    const rematchState = () => {
+        gameBoard.resetBoard();
+        gameUIController.resetGridUI();
+        gameFlow.playGame();
+
+        gameOverCntnr.style.display = 'none';
+    }
 
     const displayGameOverContainer = () => {
         if (gameBoard.isTerminal()) {
