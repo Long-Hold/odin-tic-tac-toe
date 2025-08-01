@@ -546,6 +546,7 @@ const formController = (function() {
 // Controls the container that appears when board becomes terminal
 const gameOverUIController = (function() {
     const gameOverCntnr = document.querySelector('.game-over-container');
+    const winStateMessageNode = gameOverCntnr.firstElementChild;
     
     gameOverCntnr.addEventListener('click', (event) => {
         // Only process clicks coming from the restart buttons
@@ -572,11 +573,17 @@ const gameOverUIController = (function() {
     const resetState = () => window.location.reload();
 
     const rematchState = () => {
+        refreshContainer();
+
         gameBoard.resetBoard();
         gameUIController.resetGridUI();
+
         currentPlayerUIController.displayContainerNode();
         currentPlayerUIController.displayCurrentPlayer();
+    }
 
+    const refreshContainer = () => {
+        winStateMessageNode.firstElementChild.textContent = '';
         gameOverCntnr.style.display = 'none';
     }
 
@@ -594,8 +601,6 @@ const gameOverUIController = (function() {
          * Otherwise display the symbol of the winning player.
          */
 
-        // Select the h1 element that will display the custom message
-        const winStateMessageNode = gameOverCntnr.firstElementChild;
         const winnerSymbol = getWinnerSymbol();
         
         // Appens the winner symbol to the span element within the win message
