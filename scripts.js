@@ -370,7 +370,7 @@ const gameFlow = (function() {
         }
 
         // Make the current player text visible
-        currentPlayerUIController.displayContainerNode(event);
+        currentPlayerUIController.displayContainerNode();
         currentPlayerUIController.displayCurrentPlayer();
         gameUIController.displayGameBoard(event);
 
@@ -573,7 +573,8 @@ const gameOverUIController = (function() {
     const rematchState = () => {
         gameBoard.resetBoard();
         gameUIController.resetGridUI();
-        gameFlow.playGame();
+        currentPlayerUIController.displayContainerNode();
+        currentPlayerUIController.displayCurrentPlayer();
 
         gameOverCntnr.style.display = 'none';
     }
@@ -637,15 +638,7 @@ const currentPlayerUIController = (function() {
 
     currentPlayerNode.appendChild(symbolNode);
 
-    const displayContainerNode = (event) => {
-        /**Upon game settings form submission,
-         * this container can be made visible
-         */
-        if (event.target.tagName !== 'FORM') {
-            console.error('Error: Current Player UI can only be displayed upon form submission.');
-            return;
-        }
-
+    const displayContainerNode = () => {
         currentPlayerContainer.style.display = 'block';
     }
 
