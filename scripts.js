@@ -21,7 +21,7 @@ const gameBoard = (function (){
     const activePlayers = {X: false, O: false};
 
     // Initialize the gameboard with empty tiles
-    const board = [
+    let board = [
         [EMPTY,EMPTY,EMPTY],
         [EMPTY,EMPTY,EMPTY],
         [EMPTY,EMPTY,EMPTY]
@@ -217,7 +217,15 @@ const gameBoard = (function (){
     // Returns a deep copy of the internal array game state
     const getBoard = () => board.map(row => [...row]);
 
-    return {isSymbolValid, player, placeTile, getEmptyCells, isTerminal, getWinner, getBoard, symbolToCharMap};
+    const resetBoard = () => {
+        board = [
+            [EMPTY,EMPTY,EMPTY],
+            [EMPTY,EMPTY,EMPTY],
+            [EMPTY,EMPTY,EMPTY]
+        ];
+    }
+
+    return {isSymbolValid, player, placeTile, getEmptyCells, isTerminal, getWinner, getBoard, symbolToCharMap, resetBoard};
 })();
 
 function createPlayer(symbol, isAI = false) {
