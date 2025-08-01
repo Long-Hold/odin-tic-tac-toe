@@ -228,10 +228,10 @@ label {
 /* ---- end of gamegrid styling ---- */
 
 /* TEMPORARY HIDDEN ELEMENTS */
-.game-over-container, .current-player-display {
+.game-over-container, .current-player-display, .gamegrid {
     display: none;
 }
 
-section:has(form), .game-over-container {
+/* section:has(form), .game-over-container {
     display: none;
-}
+} */
