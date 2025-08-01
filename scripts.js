@@ -384,23 +384,19 @@ const gameFlow = (function() {
         if (nextPlayer.status) {
             /**If status is true, then this player is an AI
              * In that case, we call it's automated function.
-             * 
-             * The grid is frozen during this to prevent the human player
-             * from triggering event listeners by clicking the grid while the AI mvoves.
              */
-            gameUIController.freezeGridUI();
-            setTimeout(() => {
-                nextPlayer.makeAutomatedMove();
-                gameUIController.unfreezeGridUI();
-            }, 500);
+            triggerAIPlay(nextPlayer);
         }
         return gameBoard.getBoard();
     }
 
     const triggerAIPlay = (AIPlayer) => {
+        /**Freeze the grid so the human player cannot interact with it while AI makes it's
+         * next move. Once a move is made, unfreeze the grid.
+         */
         gameUIController.freezeGridUI();
         setTimeout(() => {
-            nextPlayer.makeAutomatedMove();
+            AIPlayer.makeAutomatedMove();
             gameUIController.unfreezeGridUI();
         }, 500);
     }
