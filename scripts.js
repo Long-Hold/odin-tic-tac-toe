@@ -258,9 +258,12 @@ function createPlayer(symbol, isAI = false) {
         player.makeAutomatedMove = () => {
             const emptyCells = gameBoard.getEmptyCells();
             const randomIndex = Math.floor(Math.random() * emptyCells.length);
-            const tileChoice = emptyCells[randomIndex];
 
-            return makeMove(tileChoice);
+            const chosenTileNode = document.querySelector('.gamegrid').children[randomIndex];
+            chosenTileNode.click();
+            
+            // const tileChoice = emptyCells[randomIndex];
+            // return makeMove(tileChoice);
         }
     }
 
