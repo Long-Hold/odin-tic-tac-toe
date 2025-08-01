@@ -384,7 +384,11 @@ const gameFlow = (function() {
         if (nextPlayer.status) {
             // Set a time out to make the game feel natural and give the UI time
             // to update
-            setTimeout(() => nextPlayer.makeAutomatedMove(), 500);
+            gameUIController.freezeGridUI();
+            setTimeout(() => {
+                nextPlayer.makeAutomatedMove();
+                gameUIController.unfreezeGridUI();
+            }, 500);
         }
         return gameBoard.getBoard();
     }
@@ -466,10 +470,8 @@ const gameUIController = (function() {
 
     // Freezes the grid area if the board turns terminal
     const freezeGridUI = () => {
-        if (gameBoard.isTerminal()) {
-            gameGridNode.style.pointerEvents = "none";
-            console.log('Game Grid UI frozen.');
-        }
+        gameGridNode.style.pointerEvents = "none";
+        console.log('Game Grid UI frozen.');
     };
 
     const unfreezeGridUI = () => {
