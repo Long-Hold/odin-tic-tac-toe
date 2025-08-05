@@ -62,6 +62,14 @@ button:active {
 }
 
 input[type=radio] {
+    display: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+input[type=radio]:disabled {
+    pointer-events: none;
+    -webkit-appearance: none;
     appearance: none;
 }
 
