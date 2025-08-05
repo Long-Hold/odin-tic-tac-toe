@@ -245,18 +245,6 @@ function createPlayer(symbol, isAI = false) {
     return player;
 }
 
-function createAIPlayer(symbol) {
-    const playerObj = createPlayer(symbol);
-    const makeAutomatedMove = () => {
-        const randomTile = Math.floor(Math.random() * gameBoard.getEmptyCells().length);
-
-        const tileChoice = gameBoard.getEmptyCells[randomTile];
-        playerObj.makeMove(tileChoice);
-    }
-
-    return {makeAutomatedMove};
-}
-
 // Calls the correct game process in order
 const gameFlow = (function() {
     /**Controls the game flow logic.
