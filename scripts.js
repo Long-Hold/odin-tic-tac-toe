@@ -388,6 +388,9 @@ const gameFlow = (function() {
          */
         gameBoard.player() === playerX.playerSymbol ? playerX.makeMove(coords) : playerO.makeMove(coords);
         currentPlayerUIController.displayCurrentPlayer();
+
+        // TODO: Gamegrid does not remain frozen if AI wins
+        // FInd out why gamegrid is interactable after an AI wins
         if (gameBoard.isTerminal()) {
             activateTerminalUIStates();
             return gameBoard.getWinner();
@@ -410,7 +413,9 @@ const gameFlow = (function() {
         gameUIController.freezeGridUI();
         setTimeout(() => {
             AIPlayer.makeAutomatedMove();
-            gameUIController.unfreezeGridUI();
+            if (!gameBoard.isTerminal()) {
+                gameUIController.unfreezeGridUI();
+            }
         }, 500);
     }
 
