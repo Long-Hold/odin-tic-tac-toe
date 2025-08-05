@@ -448,7 +448,6 @@ const gameUIController = (function() {
        gameGridNode.style.display = 'grid';
     }
 
-    // Freezes the grid area if the board turns terminal
     const freezeGridUI = () => {
         gameGridNode.style.pointerEvents = "none";
         console.log('Game Grid UI frozen.');
