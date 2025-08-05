@@ -398,6 +398,10 @@ const gameUIController = (function() {
      */
 
     let coords = null;
+
+    const xSVGSymbol = './svgs/x_symbol.svg';
+    const oSVGSymbol = './svgs/o_symbol.svg'
+
     const gameGridNode = document.querySelector('.gamegrid');
     gameGridNode.addEventListener('click', (event) => getGridPosition(event));
 
@@ -429,7 +433,7 @@ const gameUIController = (function() {
         const [x, y] = coords;
 
         const symbol = document.createElement('img');
-        const imgSource = gameBoard.getBoard()[x][y] === 'X' ? 'svgs/x_symbol.svg' : 'svgs/o_symbol.svg';
+        const imgSource = gameBoard.getBoard()[x][y] === 'X' ? xSVGSymbol : oSVGSymbol;
 
         symbol.src = imgSource;
         event.target.appendChild(symbol);
