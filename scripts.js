@@ -566,11 +566,11 @@ const gameOverUIController = (function() {
 
         const imageNode = document.createElement('img');
         switch(gameBoard.getWinner()) {
-            case 'X':
+            case gameBoard.X:
                 imageNode.src = './svgs/x_symbol.svg';
                 return imageNode;
 
-            case 'O':
+            case gameBoard.O:
                 imageNode.src = './svgs/o_symbol.svg';
                 return imageNode
             
