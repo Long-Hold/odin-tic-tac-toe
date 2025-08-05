@@ -253,7 +253,7 @@ label {
     animation-duration: 0.8s;
     animation-name: shrinkGrowBounce;
     background-color: rgba(180, 180, 180, 0.345);
-    transition: 0.2s;
+    transition: 0.8s;
 }
 
 @media(hover: hover) {
