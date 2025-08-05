@@ -277,16 +277,17 @@ const gameFlow = (function() {
         switch (playerOneSymbol) {
             case gameBoard.X:
                 playerX = createPlayer(playerOneSymbol);
-                playerO = createPlayer('O', AIPlayerStatus);
+                playerO = createPlayer(gameBoard.O, AIPlayerStatus);
                 break;
 
             case gameBoard.O:
                 playerO = createPlayer(playerOneSymbol);
-                playerX = createPlayer('X', AIPlayerStatus);
+                playerX = createPlayer(gameBoard.X, AIPlayerStatus);
                 break;
             
             default:
-                throw new Error('Player object creation failed');
+                console.error('Player object creation failed');
+                break;
         }
     }
 
