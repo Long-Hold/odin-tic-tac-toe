@@ -425,11 +425,7 @@ const gameUIController = (function() {
         console.log(coords);
     }
 
-    // Updates a grid square to match the internal grid state
     const updateGridUI = (event) => {
-        /**Creates an img node that stores the image of the selected tile
-         * This newly created node is then appended to the selected div container.
-         */
         const [x, y] = coords;
 
         const symbol = document.createElement('img');
