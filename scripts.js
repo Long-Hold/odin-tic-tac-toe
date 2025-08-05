@@ -416,18 +416,9 @@ const gameUIController = (function() {
         if (gameBoard.getBoard()[coords[0]][coords[1]] !== null) {
             return;
         }
-        transferGridPosition();
+        gameFlow.playGame(coords);
         updateGridUI(event);
         console.log(coords);
-    }
-
-    // Transfers the selected grid coordinates to the gameFlow controller
-    const transferGridPosition = () => {
-        if (coords === null) {
-            return;
-        }
-
-        gameFlow.playGame(coords);
     }
 
     // Updates a grid square to match the internal grid state
