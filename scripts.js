@@ -427,7 +427,7 @@ const gameUIController = (function() {
             return;
         }
 
-        return gameFlow.playGame(coords);
+        gameFlow.playGame(coords);
     }
 
     // Updates a grid square to match the internal grid state
