@@ -10,9 +10,6 @@ const gameBoard = (function (){
     const X = 'X';
     const O = 'O';
 
-    // Converts the symbol variable to a char representation
-    const symbolToCharMap = {X, O, EMPTY};
-
     // An array containing valid symbols
     const validSymbols = [X, O];
 
@@ -198,7 +195,7 @@ const gameBoard = (function (){
     return {
         isSymbolValid, player, placeTile, 
         getEmptyCells, isTerminal, getWinner, 
-        getBoard, symbolToCharMap, resetBoard};
+        getBoard, resetBoard, X, O};
 })();
 
 function createPlayer(symbol, isAI = false) {
@@ -298,12 +295,12 @@ const gameFlow = (function() {
         }
 
         switch (playerOneSymbol) {
-            case gameBoard.symbolToCharMap.X:
+            case gameBoard.X:
                 playerX = createPlayer(playerOneSymbol);
                 playerO = createPlayer('O', AIPlayerStatus);
                 break;
 
-            case gameBoard.symbolToCharMap.O:
+            case gameBoard.O:
                 playerO = createPlayer(playerOneSymbol);
                 playerX = createPlayer('X', AIPlayerStatus);
                 break;
