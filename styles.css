@@ -182,8 +182,18 @@ label {
 /* ---- End of form styling ---- */
 
 /* ---- Game Over container styling ---- */
-.game-over-container {
-    text-align: center;
+.game-over-container, .game-over-container section {
+    display: flex;
+    flex-flow: column nowrap;
+    align-content: center;
+    justify-items: center;
+}
+
+.game-over-container > :first-child {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 /* Custom animation ruleset for the element */
@@ -195,7 +205,6 @@ label {
 /* Select the span element within the h1 element */
 .game-over-container > :first-child :first-child {
     height: 1.5em;
-    position: absolute;
     animation: scaleIn 0.5s ease-out;
 }
 /* ---- End of Game Over container styling ---- */
