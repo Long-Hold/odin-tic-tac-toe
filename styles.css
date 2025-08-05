@@ -246,15 +246,24 @@ label {
   }
 }
 
-.gamegrid div:hover {
+.gamegrid div:active {
     animation-duration: 0.8s;
     animation-name: shrinkGrowBounce;
-    animation-iteration-count: infinite;
-    animation-direction:alternate;
-    animation-timing-function: ease-in-out;
-
     background-color: rgba(180, 180, 180, 0.345);
-    transition: 0.8s;
+    transition: 0.2s;
+}
+
+@media(hover: hover) {
+    .gamegrid div:hover {
+        animation-duration: 0.8s;
+        animation-name: shrinkGrowBounce;
+        animation-iteration-count: infinite;
+        animation-direction:alternate;
+        animation-timing-function: ease-in-out;
+
+        background-color: rgba(180, 180, 180, 0.345);
+        transition: 0.8s;
+    }
 }
 /* ---- end of gamegrid styling ---- */
 
