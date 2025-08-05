@@ -170,12 +170,7 @@ const gameBoard = (function (){
         return true;
     }
 
-    // Returns an integer representation of the winning player
     const getWinner = () => {
-        /**Returns a numeric representation of the winning player
-         * this is particularly helpful for the BOT AI player,
-         * and makes win condition checking easier and more efficient
-         */
         switch(winner()) {
             case X:
                 console.log(`Player: ${X} Wins`);
