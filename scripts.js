@@ -208,7 +208,7 @@ function createPlayer(symbol, isAI = false) {
      * symbol is verified by the gameBoard object.
      * isAI helps automatic move making decisions between the gameBoard and UI
      */
-    if (gameBoard.isSymbolValid(symbol) === false) {
+    if (symbol !== gameBoard.X && symbol !== gameBoard.O) {
         console.error(`${symbol} is not a valid symbol.`);
         return null;
     }
