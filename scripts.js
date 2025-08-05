@@ -413,6 +413,11 @@ const gameFlow = (function() {
         gameUIController.freezeGridUI();
         setTimeout(() => {
             AIPlayer.makeAutomatedMove();
+
+            /**If the gameboard is terminal after AI place a tile,
+             * then we want to keep the UI frozen so the human player
+             * cannot interact with the screen and cause a visual bug
+             */
             if (!gameBoard.isTerminal()) {
                 gameUIController.unfreezeGridUI();
             }
