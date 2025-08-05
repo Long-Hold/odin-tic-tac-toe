@@ -236,9 +236,6 @@ function createPlayer(symbol, isAI = false) {
 
             const chosenTileNode = document.querySelector(`[data-position="${row}${col}"]`);
             chosenTileNode.click();
-
-            // const tileChoice = emptyCells[randomIndex];
-            // return makeMove(tileChoice);
         }
     }
 
