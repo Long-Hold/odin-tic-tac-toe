@@ -222,12 +222,7 @@ function createPlayer(symbol, isAI = false) {
             return gameBoard.getBoard();
         }
 
-        try {
-            return gameBoard.placeTile(position)
-        } 
-        catch (e) {
-            console.error(e);
-        }
+        gameBoard.placeTile(position)
     }
 
     const player = {playerSymbol, status, makeMove};
