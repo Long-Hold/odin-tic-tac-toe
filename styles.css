@@ -166,6 +166,9 @@ p:has(input:checked) {
 
 label {
     flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* ---- End of form styling ---- */
