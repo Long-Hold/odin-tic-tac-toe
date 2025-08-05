@@ -553,15 +553,7 @@ const gameOverUIController = (function() {
     }
 
     const displayGameOverMessage = () => {
-        /**Displays a custom game over message depending on the terminal condition.
-         * If gameBoard is terminal and there is no winner, then display "No Winner!"
-         * 
-         * Otherwise display the symbol of the winning player.
-         */
-
         const winnerSymbol = getWinnerSymbol();
-        
-        // Appens the winner symbol to the span element within the win message
         winStateMessageNode.firstElementChild.append(winnerSymbol)
     }
 
