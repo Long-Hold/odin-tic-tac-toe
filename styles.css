@@ -67,6 +67,11 @@ input[type=radio] {
     appearance: none;
 }
 
+legend {
+    text-align: center;
+    width: 100%;
+}
+
 input[type=radio]:disabled {
     pointer-events: none;
     -webkit-appearance: none;
