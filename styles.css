@@ -161,8 +161,11 @@ p:has(label) {
     flex-flow: row nowrap;
 
     justify-content: center;
-    &:has(label):hover {
-        background-color: rgb(40, 0, 237);
+
+    @media(hover: hover) {
+        &:has(label):hover {
+            background-color: rgb(40, 0, 237);
+        }
     }
 }
 
