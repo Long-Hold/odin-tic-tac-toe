@@ -179,10 +179,10 @@ const gameBoard = (function (){
         switch(winner()) {
             case X:
                 console.log(`Player: ${X} Wins`);
-                return symbolToCharMap[X];
+                return X;
             case O:
                 console.log(`Player: ${O} wins`);
-                return symbolToCharMap[O];
+                return O;
             default:
                 console.log('No winner detected');
                 return null;
