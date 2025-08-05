@@ -16,10 +16,6 @@ const gameBoard = (function (){
     // An array containing valid symbols
     const validSymbols = [X, O];
 
-    // When false - player slot can be taken
-    // When true - player cannot be assigned
-    const activePlayers = {X: false, O: false};
-
     // Initialize the gameboard with empty tiles
     let board = [
         [EMPTY,EMPTY,EMPTY],
@@ -69,27 +65,6 @@ const gameBoard = (function (){
             if ((board[0][0] === board[1][1] && board[1][1] === board[2][2]) ||
                 (board[0][2] === board[1][1] && board[1][1] === board[2][0])) {
                     return board[1][1];
-            }
-        }
-
-        return null;
-    }
-
-    // Updates activePlayers list boolean values
-    const markPlayerTaken = (obj) => {
-        // Marks the passed player object value as true
-        activePlayers[obj] = true;
-        console.log(`Player ${obj} selected.`);
-    }
-
-    const getAvailablePlayer = () => {
-        /**If an available player is found, return it's char representation
-         * otherwise return null (no available players)
-        */
-        for (const obj in activePlayers) {
-            if (activePlayers[obj] === false) {
-                markPlayerTaken(obj);
-                return symbolToCharMap[obj];
             }
         }
 
